@@ -1,3 +1,6 @@
+# [現在未使用・参考用] dataset_index/create_index.py が正式な分割ロジック。
+# こちらは manifest_copy.csv を入力に manifest_split.csv を出力する別系統の実装で、
+# train2.py が実際に使う dataset_index_split.csv とは無関係（split比率も異なる）。
 import pandas as pd
 from sklearn.model_selection import GroupShuffleSplit
 

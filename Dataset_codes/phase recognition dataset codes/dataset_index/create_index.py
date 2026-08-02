@@ -2,7 +2,7 @@ import os
 import csv
 import re
 import pandas as pd
-from sklearn.model_selection import GroupShuffleSplit
+from sklearn.model_selection import GroupKFold, GroupShuffleSplit
 
 # --- 設定項目 ---
 dataset_root = r"C:\Users\kit02\GitHub\Cataract-1K\Phase_recognition_dataset\Training_Dataset"
@@ -15,6 +15,11 @@ phases = [
     "LensImplantation", "LensPositioning", "Viscoelastic_Suction",
     "Anterior_ChamberFlushing", "Tonifying_Antibiotics", "idle"
 ]
+
+# 交差検証用の fold 数。train2.py が fixed-split / 交差検証のどちらでも同じ
+# dataset_index_split.csv を使えるよう、split列(train/val/test)とは別に
+# fold列を持たせる。
+NUM_FOLDS = 5
 
 label_to_idx = {phase: i for i, phase in enumerate(phases)}
 
@@ -71,7 +76,23 @@ if unassigned_count > 0:
 else:
     print("すべてのデータが正常にいずれかのグループに割り当てられました。")
 
-# 3. 結果の保存
+# 3. 交差検証用の fold 割り当て
+# 固定 test set（モデル選択・fold比較のいずれにも使わないホールドアウト）は
+# どの fold にも属させない（fold=-1）。test以外の症例（train+val, 症例単位）を
+# GroupKFold で NUM_FOLDS 個に分割する。train2.py は交差検証モードのとき
+# split列ではなくこの fold列を見て、fold==k を val、fold!=k（かつ test以外）を
+# train として扱う。
+print(f"\n交差検証用 fold を割り当て中（{NUM_FOLDS}-fold）...")
+cv_pool = df[df['split'] != 'test'].copy()
+gkf = GroupKFold(n_splits=NUM_FOLDS)
+df['fold'] = -1
+for fold_idx, (_, val_idx) in enumerate(gkf.split(cv_pool, groups=cv_pool['case_id'])):
+    df.loc[cv_pool.index[val_idx], 'fold'] = fold_idx
+
+print(f"fold割り当て結果（症例数）:")
+print(df[df['fold'] >= 0].groupby('fold')['case_id'].nunique())
+
+# 4. 結果の保存
 df.to_csv(final_csv, index=False)
 
 print(f"--- 完了 ---")
@@ -79,14 +100,10 @@ print(f"作成ファイル: {final_csv}")
 print("分割結果（症例数）:")
 print(df.groupby('split')['case_id'].nunique())
 
-df = pd.read_csv("../dataset_index.csv")
-
-def extract_case_id(path):
-    match = re.search(r'(case_\d+)', path)
-    return match.group(1) if match else None
-
-df['case_id'] = df['file_path'].apply(extract_case_id)
-
+# 検出された症例一覧の確認。以前はここで "../dataset_index.csv" を相対パスで
+# 再読み込みしており、output_csv の書き出し先（実行時カレントディレクトリ直下）
+# と矛盾していた（カレントディレクトリによっては FileNotFoundError になる）ため、
+# 上で読み込み・case_id 付与済みの df をそのまま再利用する形に修正。
 unique_cases = sorted(df['case_id'].unique())
 print(f"検出されたユニークな症例数: {len(unique_cases)} 本")
 print("検出されたケース一覧:", unique_cases)

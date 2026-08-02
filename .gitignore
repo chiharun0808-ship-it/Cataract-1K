@@ -1,1 +1,5 @@
 *.mp4
+__pycache__/
+*.pth
+result/
+.idea/
