@@ -48,7 +48,7 @@ active_phases = phases if INCLUDE_IDLE_PHASE else phases_12
 # True:  dataset_index/create_index.py が付与した fold列を使い、NUM_FOLDS個の
 #        foldそれぞれで学習し、fold間の val F1 の平均・標準偏差を集計する。
 #        どちらのモードでも test split には触れない（test2.py で別途評価する）。
-USE_CROSS_VALIDATION = False
+USE_CROSS_VALIDATION = True
 NUM_FOLDS = 5
 
 # 学習するモデルをここで指定する。複数指定すると、その全モデルを順番に学習・比較できる
@@ -57,7 +57,7 @@ NUM_FOLDS = 5
 # "resnet50_lstm", "resnet50_gru", "efficientnetb5_lstm", "efficientnetb5_gru"
 # 前処理の解像度は224x224に統一しており(dataset_index/prepare_dataset.py)、
 # 本来456x456程度を想定するEfficientNetB5系もこの解像度で学習・比較する。
-MODEL_NAMES = ["resnet50_lstm", "resnet50_gru", "efficientnetb5_lstm", "efficientnetb5_gru"]
+MODEL_NAMES = ["resnet50_lstm"]
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 csv_path = "dataset_index_split.csv"
@@ -242,6 +242,30 @@ def run_training(save_dir: Path, model_name: str, fold=None) -> float:
     # 混同行列: val split に出現しないクラスがあっても全クラス分の軸を保持するため
     # labels に num_classes 分を明示的に指定する
     cm = confusion_matrix(all_labels, all_preds, labels=range(num_classes))
+
+    # --- フェーズ（クラス）ごとの Accuracy / F1 の算出・保存 ---
+    # Accuracy は混同行列の対角成分 / その行の合計（= recall）として、フェーズごとの
+    # 分類性能を評価する。support（そのフェーズの正解サンプル数）が0の場合は0とする。
+    per_phase_f1 = f1_score(all_labels, all_preds, average=None, labels=range(num_classes), zero_division=0)
+    phase_metrics = {}
+    for i, phase_name in enumerate(active_phases):
+        support = int(cm[i].sum())
+        phase_acc = cm[i, i] / support if support > 0 else 0.0
+        phase_metrics[phase_name] = {
+            "accuracy": float(phase_acc),
+            "f1": float(per_phase_f1[i]),
+            "support": support,
+        }
+    with open(os.path.join(save_dir, "phase_metrics.json"), "w", encoding="utf-8") as f:
+        json.dump(phase_metrics, f, indent=2, ensure_ascii=False)
+
+    print(f"[{run_label}] フェーズごとの Accuracy / F1:")
+    with open(os.path.join(save_dir, "training_log.txt"), "a", encoding="utf-8") as f:
+        f.write("\n--- フェーズごとの Accuracy / F1 ---\n")
+        for phase_name, m in phase_metrics.items():
+            line = f"  {phase_name}: Accuracy={m['accuracy']:.4f}, F1={m['f1']:.4f} (support={m['support']})"
+            print(line)
+            f.write(line + "\n")
 
     plt.figure(figsize=(12, 10))  # クラス数が増えるため、少し図のサイズを大きくすると見やすくなります
     sns.heatmap(
