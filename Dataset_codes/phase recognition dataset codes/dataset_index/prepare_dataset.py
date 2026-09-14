@@ -4,18 +4,20 @@ import cv2
 import pandas as pd
 from torchvision import transforms
 
-
+#指定された条件、交差検証またはホールドアウト、train/val/test(split)から対象とする動画をcsvファイルから特定
+#指定されたフレーム数(足りなければパディングする)やフレームを抽出する間隔からフレームを集め、リサイズ、テンソルにまとめる
 class SurgicalPhaseDataset(Dataset):
     """
     手術動画のフェーズ認識用データセットクラス
     CSVからsplit（train/val/test）に応じてデータをフィルタリングし、
     指定したシーケンス長とフレーム間隔でフレームを抽出・パディングします。
     """
-
+    #オブジェクトを作ったときに最初に実行される初期設定用関数
+    #指定されていない限り引数の値を用いる。デフォルトはホールドアウト法(fold=None)
     def __init__(self, csv_file, split='train', fold=None, frame_interval=10, sequence_length=30, transform=None, exclude_idle=False):
         # CSVを読み込み、指定された split ('train', 'val', 'test') で抽出
         full_df = pd.read_csv(csv_file)
-
+        #foldは交差検証で何分割するかを示す
         if fold is None or split == 'test':
             # 固定split（分割固定）モード: split列 ('train'/'val'/'test') でそのまま抽出
             self.data = full_df[full_df['split'] == split].reset_index(drop=True)

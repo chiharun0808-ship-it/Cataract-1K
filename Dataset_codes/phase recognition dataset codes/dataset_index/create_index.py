@@ -3,7 +3,7 @@ import csv
 import re
 import pandas as pd
 from sklearn.model_selection import GroupKFold, GroupShuffleSplit
-
+#メモ：case番号ごとにtrain,val,testに分割してcsvファイルにまとめる
 # --- 設定項目 ---
 dataset_root = r"C:\Users\kit02\GitHub\Cataract-1K\Phase_recognition_dataset\Training_Dataset"
 output_csv = "dataset_index.csv"
@@ -20,7 +20,7 @@ phases = [
 # dataset_index_split.csv を使えるよう、split列(train/val/test)とは別に
 # fold列を持たせる。
 NUM_FOLDS = 5
-
+#フェーズとインデックス番号の紐づけ
 label_to_idx = {phase: i for i, phase in enumerate(phases)}
 
 # 1. CSV作成処理
@@ -39,12 +39,12 @@ with open(output_csv, mode='w', newline='', encoding='utf-8') as f:
 
 # 2. 分割処理
 print("分割処理を実行中...")
-df = pd.read_csv(output_csv)
-
+df = pd.read_csv(output_csv)#csvファイルを読み込み
+#パスからcase1111のような識別子だけを抽出する
 def extract_case_id(path):
     match = re.search(r'(case_\d+)', path)
     return match.group(1) if match else None
-
+#パス名からcase番号を抽出して配列にまとめる
 df['case_id'] = df['file_path'].apply(extract_case_id)
 
 # 万が一 case_id が抽出できなかったデータがないか確認
