@@ -10,7 +10,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import f1_score, confusion_matrix
 from dataset_index.prepare_dataset import SurgicalPhaseDataset
-from models.cnn_rnn_hybrids import create_cnn_rnn_model
+from models.cnn_rnn_hybrids import create_cnn_rnn_model, CNN_RNN_MODELS
+from models.timesformer import create_timesformer_model, TIMESFORMER_MODELS
 from dataset_weight.class_weight import get_class_weights as get_class_weights_13
 from dataset_weight.class_weight_without_idle import get_class_weights as get_class_weights_12
 from pathlib import Path
@@ -53,29 +54,53 @@ NUM_FOLDS = 5
 
 # 学習するモデルをここで指定する。複数指定すると、その全モデルを順番に学習・比較できる
 # （fixed splitモードならモデルごとに1回、交差検証モードならモデル×foldの全組み合わせ）。
-# 指定できる値は models/cnn_rnn_hybrids.py の CNN_RNN_MODELS を参照:
-# "resnet50_lstm", "resnet50_gru", "efficientnetb5_lstm", "efficientnetb5_gru"
+# 指定できる値は models/cnn_rnn_hybrids.py の CNN_RNN_MODELS と
+# models/timesformer.py の TIMESFORMER_MODELS を参照:
+# "resnet50_lstm", "resnet50_gru", "efficientnetb5_lstm", "efficientnetb5_gru", "timesformer"
 # 前処理の解像度は224x224に統一しており(dataset_index/prepare_dataset.py)、
 # 本来456x456程度を想定するEfficientNetB5系もこの解像度で学習・比較する。
-MODEL_NAMES = ["resnet50_lstm"]
+MODEL_NAMES = ["timesformer"]
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 csv_path = "dataset_index_split.csv"
 batch_size = 4
+# TimeSformerのnum_framesはこの値と一致させる必要があるため、
+# SurgicalPhaseDatasetのsequence_lengthと共通の定数として定義する。
+sequence_length = 30
 
-# EfficientNetB5系は同じ224x224・batch_size=4でもResNet50系よりはるかにGPUメモリを
-# 消費する（12GB GPUで batch_size=4, sequence_length=30 だと cuDNN のワークスペースが
-# 肥大化しOOMになることを実機で確認済み。batch_size=1なら安定動作する）。
+# EfficientNetB5系・TimeSformer系は同じ224x224・batch_size=4でもResNet50系より
+# はるかにGPUメモリを消費する（12GB GPUで batch_size=4, sequence_length=30 だと
+# cuDNN のワークスペースが肥大化しOOMになることを実機で確認済み。batch_size=1なら
+# 安定動作する。TimeSformerはViT-B/16相当(embed_dim=768, depth=12)を30フレーム分
+# Divided Space-Time Attentionで処理するため同様にメモリ消費が大きい）。
 # モデルごとに実際に使うbatch_sizeをここで上書きできるようにし、上の batch_size は
 # 「このMODEL_BATCH_SIZE_OVERRIDESに無いモデルのデフォルト値」として扱う。
 MODEL_BATCH_SIZE_OVERRIDES = {
     "efficientnetb5_lstm": 1,
     "efficientnetb5_gru": 1,
+    "timesformer": 1,
 }
 
 learning_rate = 1e-4
 num_epochs = 100
 patience = 50
+
+# TimeSformerは分類ヘッド・時間方向Attentionのみランダム初期化された121Mパラメータの
+# 大規模モデルで、batch_size=1（GPUメモリ制約によるoverride）と組み合わせると勾配の
+# ノイズが非常に大きく、通常のlearning_rate=1e-4では数エポックで多数派クラス（idle）
+# だけを予測する状態に崩壊することを実機で確認した。そのため
+#   1. モデルごとにlearning_rateを下げられるようにする
+#   2. 複数バッチ分の勾配をまとめてからoptimizer.step()する勾配累積で実質的な
+#      batch_sizeを引き上げてノイズを抑える
+#   3. 勾配爆発を防ぐため勾配クリッピングを入れる
+# の3点で対策する。指定の無いモデルは従来通り学習率=learning_rate, 累積なし(=1)のまま。
+MODEL_LEARNING_RATE_OVERRIDES = {
+    "timesformer": 1e-5,
+}
+MODEL_GRAD_ACCUM_STEPS = {
+    "timesformer": 8,
+}
+GRAD_CLIP_MAX_NORM = 1.0
 
 # 現在の日時を取得してフォーマット (例: 7月21日0時49分 -> 0721_0_49)
 current_time = datetime.now().strftime("%m%d_%H_%M")
@@ -92,6 +117,8 @@ def run_training(save_dir: Path, model_name: str, fold=None) -> float:
     os.makedirs(save_dir, exist_ok=True)
 
     effective_batch_size = MODEL_BATCH_SIZE_OVERRIDES.get(model_name, batch_size)
+    effective_learning_rate = MODEL_LEARNING_RATE_OVERRIDES.get(model_name, learning_rate)
+    grad_accum_steps = MODEL_GRAD_ACCUM_STEPS.get(model_name, 1)
 
     # この結果フォルダを生成した設定を記録しておく。fold や model の種類を増やすと
     # training_log.txt だけでは「どの設定の結果か」を後から追跡できなくなるため、
@@ -102,7 +129,10 @@ def run_training(save_dir: Path, model_name: str, fold=None) -> float:
         "num_classes": num_classes,
         "csv_path": csv_path,
         "batch_size": effective_batch_size,
-        "learning_rate": learning_rate,
+        "sequence_length": sequence_length,
+        "learning_rate": effective_learning_rate,
+        "grad_accum_steps": grad_accum_steps,
+        "grad_clip_max_norm": GRAD_CLIP_MAX_NORM,
         "num_epochs": num_epochs,
         "patience": patience,
         "use_cross_validation": USE_CROSS_VALIDATION,
@@ -115,16 +145,25 @@ def run_training(save_dir: Path, model_name: str, fold=None) -> float:
     class_weights = (get_class_weights_13() if INCLUDE_IDLE_PHASE else get_class_weights_12()).to(device)
 
     # --- 2. データセットの準備 ---
-    train_dataset = SurgicalPhaseDataset(csv_path, split='train', fold=fold, exclude_idle=not INCLUDE_IDLE_PHASE)
-    val_dataset = SurgicalPhaseDataset(csv_path, split='val', fold=fold, exclude_idle=not INCLUDE_IDLE_PHASE)
+    train_dataset = SurgicalPhaseDataset(csv_path, split='train', fold=fold, sequence_length=sequence_length, exclude_idle=not INCLUDE_IDLE_PHASE)
+    val_dataset = SurgicalPhaseDataset(csv_path, split='val', fold=fold, sequence_length=sequence_length, exclude_idle=not INCLUDE_IDLE_PHASE)
 
     train_loader = DataLoader(train_dataset, batch_size=effective_batch_size, shuffle=True, num_workers=0)
     val_loader = DataLoader(val_dataset, batch_size=effective_batch_size, shuffle=False, num_workers=0)
 
     # --- 3. モデル・損失・最適化 ---
-    model = create_cnn_rnn_model(model_name, num_classes=num_classes, pretrained_cnn=True).to(device)
+    # CNN-RNNハイブリッド系(models/cnn_rnn_hybrids.py)とTimeSformer系
+    # (models/timesformer.py)のどちらのレジストリに属するかでファクトリ関数を切り替える。
+    if model_name in CNN_RNN_MODELS:
+        model = create_cnn_rnn_model(model_name, num_classes=num_classes, pretrained_cnn=True).to(device)
+    elif model_name in TIMESFORMER_MODELS:
+        model = create_timesformer_model(
+            model_name, num_classes=num_classes, num_frames=sequence_length, pretrained_cnn=True
+        ).to(device)
+    else:
+        raise ValueError(f"Unsupported model: {model_name}")
     criterion = nn.CrossEntropyLoss(weight=class_weights)
-    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    optimizer = optim.Adam(model.parameters(), lr=effective_learning_rate)
 
     # --- 4. 学習ループ ---
     # 精度や損失を記録してグラフ描画に使用する辞書
@@ -151,15 +190,24 @@ def run_training(save_dir: Path, model_name: str, fold=None) -> float:
             print(f"Epoch {epoch + 1} 開始...")
             all_train_preds, all_train_labels = [], []
 
+            # grad_accum_steps分のバッチの勾配をためてからoptimizer.step()する
+            # （batch_size=1のモデルでも実質的なバッチサイズを引き上げ、勾配ノイズによる
+            # 学習の不安定化を抑える。grad_accum_steps=1のモデルは従来通り毎バッチ更新）。
+            optimizer.zero_grad()
+            num_batches = len(train_loader)
             for i, (images, labels) in enumerate(train_loader):
                 images, labels = images.to(device), labels.to(device)
-                optimizer.zero_grad()
                 outputs = model(images)
-                loss = criterion(outputs, labels)
+                loss = criterion(outputs, labels) / grad_accum_steps
                 loss.backward()
-                optimizer.step()
 
-                running_loss += loss.item()
+                is_last_batch = (i + 1) == num_batches
+                if (i + 1) % grad_accum_steps == 0 or is_last_batch:
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=GRAD_CLIP_MAX_NORM)
+                    optimizer.step()
+                    optimizer.zero_grad()
+
+                running_loss += loss.item() * grad_accum_steps
                 _, predicted = torch.max(outputs, 1)
 
                 # 予測値と正解ラベルを蓄積
