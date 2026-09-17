@@ -1,0 +1,890 @@
+result\epochs_35\sliding_window_checkpoints_0914_10_46\config.json を読み込みました: {'model_name': 'timesformer', 'training_scheme': 'sliding_window', 'include_idle_phase': True, 'num_classes': 13, 'csv_path': 'dataset_index_sliding_window_stride5.csv', 'frame_interval': 1, 'num_workers': 8, 'batch_size': 1, 'sequence_length': 30, 'learning_rate': 1e-05, 'grad_accum_steps': 8, 'grad_clip_max_norm': 1.0, 'num_epochs': 35, 'patience': 10, 'use_cross_validation': False, 'fold': None, 'num_folds': None, 'resumed_from': 'result\\epochs_15\\sliding_window_checkpoints_0913_21_46\\best_model.pth', 'resume_best_f1': 0.763}
+[test] データセット初期化: 881 クリップ
+[analyze] test split: 881 ウィンドウ (checkpoint: result\epochs_35\sliding_window_checkpoints_0914_10_46\best_model.pth)
+  [1/900] window_0001 case_4697 t=0.0s true=idle pred=idle (正解)
+  [2/900] window_0002 case_4697 t=5.0s true=idle pred=idle (正解)
+  [3/900] window_0003 case_4697 t=10.0s true=idle pred=idle (正解)
+  [4/900] window_0004 case_4697 t=15.0s true=Incision pred=Incision (正解) transition@20
+  [5/900] window_0005 case_4697 t=20.0s true=Incision pred=Incision (正解) transition@5
+  [6/900] window_0006 case_4697 t=25.0s true=idle pred=idle (正解) transition@3
+  [7/900] window_0007 case_4697 t=30.0s true=Viscoelastic pred=Viscoelastic (正解) transition@12
+  [8/900] window_0008 case_4697 t=35.0s true=idle pred=idle (正解) transition@6
+  [9/900] window_0009 case_4697 t=40.0s true=Capsulorhexis pred=idle (誤分類) transition@13
+  [10/900] window_0010 case_4697 t=45.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@15
+  [11/900] window_0011 case_4697 t=50.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [12/900] window_0012 case_4697 t=55.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [13/900] window_0013 case_4697 t=60.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [14/900] window_0014 case_4697 t=65.0s true=Hydrodissection pred=Hydrodissection (正解) transition@17
+  [15/900] window_0015 case_4697 t=70.0s true=Hydrodissection pred=Hydrodissection (正解) transition@2
+  [16/900] window_0016 case_4697 t=75.0s true=idle pred=Phacoemulsification (誤分類) transition@28
+  [17/900] window_0017 case_4697 t=80.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@13
+  [18/900] window_0018 case_4697 t=85.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@11
+  [19/900] window_0019 case_4697 t=90.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [20/900] window_0020 case_4697 t=95.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [21/900] window_0021 case_4697 t=100.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [22/900] window_0022 case_4697 t=105.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [23/900] window_0023 case_4697 t=110.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [24/900] window_0024 case_4697 t=115.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [25/900] window_0025 case_4697 t=120.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [26/900] window_0026 case_4697 t=125.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [27/900] window_0027 case_4697 t=130.0s true=idle pred=idle (正解) transition@25
+  [28/900] window_0028 case_4697 t=135.0s true=idle pred=idle (正解) transition@10
+  [29/900] window_0029 case_4697 t=140.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@22
+  [30/900] window_0030 case_4697 t=145.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@7
+  [31/900] window_0031 case_4697 t=150.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [32/900] window_0032 case_4697 t=155.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [33/900] window_0033 case_4697 t=160.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [34/900] window_0034 case_4697 t=165.0s true=CapsulePulishing pred=idle (誤分類) transition@22
+  [35/900] window_0035 case_4697 t=170.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@7
+  [36/900] window_0036 case_4697 t=175.0s true=idle pred=idle (正解) transition@24
+  [37/900] window_0037 case_4697 t=180.0s true=idle pred=idle (正解) transition@9
+  [38/900] window_0038 case_4697 t=185.0s true=LensImplantation pred=idle (誤分類) transition@11
+  [39/900] window_0039 case_4697 t=190.0s true=LensImplantation pred=LensImplantation (正解) transition@7
+  [40/900] window_0040 case_4697 t=195.0s true=LensImplantation pred=LensImplantation (正解)
+  [41/900] window_0041 case_4697 t=200.0s true=idle pred=idle (正解) transition@27
+  [42/900] window_0042 case_4697 t=205.0s true=LensPositioning pred=idle (誤分類) transition@12
+  [43/900] window_0043 case_4697 t=210.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@4
+  [44/900] window_0044 case_4697 t=215.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@9
+  [45/900] window_0045 case_4697 t=220.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [46/900] window_0046 case_4697 t=225.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [47/900] window_0047 case_4697 t=230.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@21
+  [48/900] window_0048 case_4697 t=235.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@6
+  [49/900] window_0049 case_4697 t=240.0s true=idle pred=idle (正解) transition@29
+  [50/900] window_0050 case_4709 t=0.0s true=idle pred=idle (正解)
+  [51/900] window_0051 case_4709 t=5.0s true=idle pred=idle (正解)
+  [52/900] window_0052 case_4709 t=10.0s true=idle pred=idle (正解)
+  [53/900] window_0053 case_4709 t=15.0s true=idle pred=idle (正解)
+  [54/900] window_0054 case_4709 t=20.0s true=idle pred=idle (正解)
+  [55/900] window_0055 case_4709 t=25.0s true=Incision pred=Incision (正解) transition@27
+  [56/900] window_0056 case_4709 t=30.0s true=Incision pred=Incision (正解) transition@12
+  [57/900] window_0057 case_4709 t=35.0s true=Incision pred=LensImplantation (誤分類) transition@5
+  [58/900] window_0058 case_4709 t=40.0s true=Viscoelastic pred=Viscoelastic (正解) transition@18
+  [59/900] window_0059 case_4709 t=45.0s true=idle pred=idle (正解) transition@3
+  [60/900] window_0060 case_4709 t=50.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@13
+  [61/900] window_0061 case_4709 t=55.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@5
+  [62/900] window_0062 case_4709 t=60.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [63/900] window_0063 case_4709 t=65.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [64/900] window_0064 case_4709 t=70.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [65/900] window_0065 case_4709 t=75.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [66/900] window_0066 case_4709 t=80.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [67/900] window_0067 case_4709 t=85.0s true=Hydrodissection pred=Hydrodissection (正解) transition@19
+  [68/900] window_0068 case_4709 t=90.0s true=Hydrodissection pred=Hydrodissection (正解) transition@4
+  [69/900] window_0069 case_4709 t=95.0s true=Hydrodissection pred=Hydrodissection (正解)
+  [70/900] window_0070 case_4709 t=100.0s true=idle pred=idle (正解) transition@24
+  [71/900] window_0071 case_4709 t=105.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@9
+  [72/900] window_0072 case_4709 t=110.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@4
+  [73/900] window_0073 case_4709 t=115.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [74/900] window_0074 case_4709 t=120.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [75/900] window_0075 case_4709 t=125.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [76/900] window_0076 case_4709 t=130.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [77/900] window_0077 case_4709 t=135.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [78/900] window_0078 case_4709 t=140.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [79/900] window_0079 case_4709 t=145.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [80/900] window_0080 case_4709 t=150.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [81/900] window_0081 case_4709 t=155.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [82/900] window_0082 case_4709 t=160.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [83/900] window_0083 case_4709 t=165.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [84/900] window_0084 case_4709 t=170.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [85/900] window_0085 case_4709 t=175.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [86/900] window_0086 case_4709 t=180.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [87/900] window_0087 case_4709 t=185.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [88/900] window_0088 case_4709 t=190.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [89/900] window_0089 case_4709 t=195.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [90/900] window_0090 case_4709 t=200.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [91/900] window_0091 case_4709 t=205.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [92/900] window_0092 case_4709 t=210.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [93/900] window_0093 case_4709 t=215.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [94/900] window_0094 case_4709 t=220.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [95/900] window_0095 case_4709 t=225.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [96/900] window_0096 case_4709 t=230.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [97/900] window_0097 case_4709 t=235.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [98/900] window_0098 case_4709 t=240.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [99/900] window_0099 case_4709 t=245.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [100/900] window_0100 case_4709 t=250.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [101/900] window_0101 case_4709 t=255.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [102/900] window_0102 case_4709 t=260.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [103/900] window_0103 case_4709 t=265.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [104/900] window_0104 case_4709 t=270.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [105/900] window_0105 case_4709 t=275.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [106/900] window_0106 case_4709 t=280.0s true=idle pred=idle (正解) transition@19
+  [107/900] window_0107 case_4709 t=285.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@4
+  [108/900] window_0108 case_4709 t=290.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@8
+  [109/900] window_0109 case_4709 t=295.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [110/900] window_0110 case_4709 t=300.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [111/900] window_0111 case_4709 t=305.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [112/900] window_0112 case_4709 t=310.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [113/900] window_0113 case_4709 t=315.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [114/900] window_0114 case_4709 t=320.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [115/900] window_0115 case_4709 t=325.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [116/900] window_0116 case_4709 t=330.0s true=idle pred=idle (正解) transition@29
+  [117/900] window_0117 case_4709 t=335.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@14
+  [118/900] window_0118 case_4709 t=340.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@7
+  [119/900] window_0119 case_4709 t=345.0s true=CapsulePulishing pred=CapsulePulishing (正解)
+  [120/900] window_0120 case_4709 t=350.0s true=idle pred=idle (正解) transition@28
+  [121/900] window_0121 case_4709 t=355.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@13
+  [122/900] window_0122 case_4709 t=360.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@10
+  [123/900] window_0123 case_4709 t=365.0s true=Viscoelastic pred=Viscoelastic (正解) transition@18
+  [124/900] window_0124 case_4709 t=370.0s true=Viscoelastic pred=Viscoelastic (正解) transition@3
+  [125/900] window_0125 case_4709 t=375.0s true=idle pred=idle (正解) transition@26
+  [126/900] window_0126 case_4709 t=380.0s true=LensImplantation pred=LensImplantation (正解) transition@11
+  [127/900] window_0127 case_4709 t=385.0s true=LensImplantation pred=LensImplantation (正解) transition@3
+  [128/900] window_0128 case_4709 t=390.0s true=LensImplantation pred=LensImplantation (正解)
+  [129/900] window_0129 case_4709 t=395.0s true=LensPositioning pred=LensPositioning (正解) transition@19
+  [130/900] window_0130 case_4709 t=400.0s true=LensPositioning pred=LensPositioning (正解) transition@4
+  [131/900] window_0131 case_4709 t=405.0s true=idle pred=idle (正解) transition@28
+  [132/900] window_0132 case_4709 t=410.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@13
+  [133/900] window_0133 case_4709 t=415.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@3
+  [134/900] window_0134 case_4709 t=420.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [135/900] window_0135 case_4709 t=425.0s true=idle pred=idle (正解) transition@23
+  [136/900] window_0136 case_4709 t=430.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@8
+  [137/900] window_0137 case_4709 t=435.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@3
+  [138/900] window_0138 case_4709 t=440.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解)
+  [139/900] window_0139 case_4709 t=445.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解)
+  [140/900] window_0140 case_4709 t=450.0s true=idle pred=idle (正解) transition@25
+  [141/900] window_0141 case_4709 t=455.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@10
+  [142/900] window_0142 case_4709 t=460.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@2
+  [143/900] window_0143 case_4709 t=465.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@18
+  [144/900] window_0144 case_4709 t=470.0s true=idle pred=idle (正解) transition@3
+  [145/900] window_0145 case_4709 t=475.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@15
+  [146/900] window_0146 case_4709 t=480.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@7
+  [147/900] window_0147 case_4709 t=485.0s true=Tonifying_Antibiotics pred=idle (誤分類)
+  [148/900] window_0148 case_4709 t=490.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解)
+  [149/900] window_0149 case_4709 t=495.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@18
+  [150/900] window_0150 case_4811 t=0.0s true=idle pred=idle (正解)
+  [151/900] window_0151 case_4811 t=5.0s true=idle pred=CapsulePulishing (誤分類) transition@16
+  [152/900] window_0152 case_4811 t=10.0s true=Incision pred=Incision (正解) transition@15
+  [153/900] window_0153 case_4811 t=15.0s true=Viscoelastic pred=Viscoelastic (正解) transition@8
+  [154/900] window_0154 case_4811 t=20.0s true=idle pred=idle (正解) transition@5
+  [155/900] window_0155 case_4811 t=25.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@10
+  [156/900] window_0156 case_4811 t=30.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [157/900] window_0157 case_4811 t=35.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [158/900] window_0158 case_4811 t=40.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [159/900] window_0159 case_4811 t=45.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [160/900] window_0160 case_4811 t=50.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [161/900] window_0161 case_4811 t=55.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [162/900] window_0162 case_4811 t=60.1s true=idle pred=idle (正解) transition@24
+  [163/900] window_0163 case_4811 t=65.1s true=Hydrodissection pred=Hydrodissection (正解) transition@9
+  [164/900] window_0164 case_4811 t=70.1s true=Hydrodissection pred=Hydrodissection (正解) transition@3
+  [165/900] window_0165 case_4811 t=75.1s true=idle pred=idle (正解) transition@27
+  [166/900] window_0166 case_4811 t=80.1s true=Phacoemulsification pred=Phacoemulsification (正解) transition@12
+  [167/900] window_0167 case_4811 t=85.1s true=Phacoemulsification pred=Phacoemulsification (正解) transition@7
+  [168/900] window_0168 case_4811 t=90.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [169/900] window_0169 case_4811 t=95.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [170/900] window_0170 case_4811 t=100.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [171/900] window_0171 case_4811 t=105.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [172/900] window_0172 case_4811 t=110.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [173/900] window_0173 case_4811 t=115.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [174/900] window_0174 case_4811 t=120.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [175/900] window_0175 case_4811 t=125.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [176/900] window_0176 case_4811 t=130.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [177/900] window_0177 case_4811 t=135.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [178/900] window_0178 case_4811 t=140.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [179/900] window_0179 case_4811 t=145.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [180/900] window_0180 case_4811 t=150.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [181/900] window_0181 case_4811 t=155.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [182/900] window_0182 case_4811 t=160.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [183/900] window_0183 case_4811 t=165.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [184/900] window_0184 case_4811 t=170.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [185/900] window_0185 case_4811 t=175.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [186/900] window_0186 case_4811 t=180.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [187/900] window_0187 case_4811 t=185.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [188/900] window_0188 case_4811 t=190.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [189/900] window_0189 case_4811 t=195.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [190/900] window_0190 case_4811 t=200.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [191/900] window_0191 case_4811 t=205.2s true=idle pred=idle (正解) transition@29
+  [192/900] window_0192 case_4811 t=210.2s true=idle pred=idle (正解) transition@14
+  [193/900] window_0193 case_4811 t=215.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@21
+  [194/900] window_0194 case_4811 t=220.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@6
+  [195/900] window_0195 case_4811 t=225.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [196/900] window_0196 case_4811 t=230.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [197/900] window_0197 case_4811 t=235.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [198/900] window_0198 case_4811 t=240.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [199/900] window_0199 case_4811 t=245.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [200/900] window_0200 case_4811 t=250.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [201/900] window_0201 case_4811 t=255.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [202/900] window_0202 case_4811 t=260.3s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [203/900] window_0203 case_4811 t=265.3s true=idle pred=idle (正解) transition@27
+  [204/900] window_0204 case_4811 t=270.3s true=CapsulePulishing pred=CapsulePulishing (正解) transition@12
+  [205/900] window_0205 case_4811 t=275.3s true=CapsulePulishing pred=CapsulePulishing (正解) transition@6
+  [206/900] window_0206 case_4811 t=280.3s true=CapsulePulishing pred=CapsulePulishing (正解)
+  [207/900] window_0207 case_4811 t=285.3s true=CapsulePulishing pred=CapsulePulishing (正解)
+  [208/900] window_0208 case_4811 t=290.3s true=Viscoelastic pred=CapsulePulishing (誤分類) transition@19
+  [209/900] window_0209 case_4811 t=295.3s true=idle pred=idle (正解) transition@4
+  [210/900] window_0210 case_4811 t=300.3s true=LensImplantation pred=LensImplantation (正解) transition@12
+  [211/900] window_0211 case_4811 t=305.3s true=LensImplantation pred=LensImplantation (正解) transition@4
+  [212/900] window_0212 case_4811 t=310.3s true=idle pred=idle (正解) transition@27
+  [213/900] window_0213 case_4811 t=315.3s true=LensPositioning pred=Anterior_ChamberFlushing (誤分類) transition@12
+  [214/900] window_0214 case_4811 t=320.3s true=LensPositioning pred=Anterior_ChamberFlushing (誤分類) transition@5
+  [215/900] window_0215 case_4811 t=325.3s true=LensPositioning pred=Anterior_ChamberFlushing (誤分類)
+  [216/900] window_0216 case_4811 t=330.3s true=LensPositioning pred=Tonifying_Antibiotics (誤分類)
+  [217/900] window_0217 case_4811 t=335.3s true=LensPositioning pred=Tonifying_Antibiotics (誤分類)
+  [218/900] window_0218 case_4811 t=340.3s true=LensPositioning pred=Tonifying_Antibiotics (誤分類)
+  [219/900] window_0219 case_4811 t=345.4s true=LensPositioning pred=Tonifying_Antibiotics (誤分類)
+  [220/900] window_0220 case_4811 t=350.4s true=idle pred=idle (正解) transition@28
+  [221/900] window_0221 case_4811 t=355.4s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@13
+  [222/900] window_0222 case_4811 t=360.4s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@5
+  [223/900] window_0223 case_4811 t=365.4s true=Viscoelastic_Suction pred=idle (誤分類)
+  [224/900] window_0224 case_4811 t=370.4s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@17
+  [225/900] window_0225 case_4811 t=375.4s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@2
+  [226/900] window_0226 case_4811 t=380.4s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解)
+  [227/900] window_0227 case_4811 t=385.4s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解)
+  [228/900] window_0228 case_4811 t=390.4s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@18
+  [229/900] window_0229 case_4811 t=395.4s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@3
+  [230/900] window_0230 case_4811 t=400.4s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@20
+  [231/900] window_0231 case_4811 t=405.4s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@5
+  [232/900] window_0232 case_4811 t=410.4s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解)
+  [233/900] window_0233 case_4852 t=0.0s true=idle pred=idle (正解)
+  [234/900] window_0234 case_4852 t=5.0s true=idle pred=idle (正解)
+  [235/900] window_0235 case_4852 t=10.0s true=idle pred=idle (正解)
+  [236/900] window_0236 case_4852 t=15.0s true=idle pred=idle (正解)
+  [237/900] window_0237 case_4852 t=20.0s true=idle pred=idle (正解)
+  [238/900] window_0238 case_4852 t=25.0s true=idle pred=idle (正解)
+  [239/900] window_0239 case_4852 t=30.0s true=idle pred=idle (正解)
+  [240/900] window_0240 case_4852 t=35.0s true=idle pred=idle (正解)
+  [241/900] window_0241 case_4852 t=40.0s true=idle pred=idle (正解)
+  [242/900] window_0242 case_4852 t=45.0s true=idle pred=idle (正解)
+  [243/900] window_0243 case_4852 t=50.0s true=Incision pred=Incision (正解) transition@19
+  [244/900] window_0244 case_4852 t=55.0s true=idle pred=idle (正解) transition@4
+  [245/900] window_0245 case_4852 t=60.1s true=Incision pred=Incision (正解) transition@4
+  [246/900] window_0246 case_4852 t=65.1s true=idle pred=idle (正解) transition@3
+  [247/900] window_0247 case_4852 t=70.1s true=Viscoelastic pred=Viscoelastic (正解) transition@7
+  [248/900] window_0248 case_4852 t=75.1s true=Viscoelastic pred=Viscoelastic (正解) transition@6
+  [249/900] window_0249 case_4852 t=80.1s true=idle pred=idle (正解) transition@25
+  [250/900] window_0250 case_4852 t=85.1s true=Capsulorhexis pred=Capsulorhexis (正解) transition@10
+  [251/900] window_0251 case_4852 t=90.1s true=Capsulorhexis pred=Capsulorhexis (正解) transition@4
+  [252/900] window_0252 case_4852 t=95.1s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [253/900] window_0253 case_4852 t=100.1s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [254/900] window_0254 case_4852 t=105.1s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [255/900] window_0255 case_4852 t=110.1s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [256/900] window_0256 case_4852 t=115.1s true=Hydrodissection pred=Capsulorhexis (誤分類) transition@19
+  [257/900] window_0257 case_4852 t=120.1s true=Hydrodissection pred=Hydrodissection (正解) transition@4
+  [258/900] window_0258 case_4852 t=125.1s true=Hydrodissection pred=Hydrodissection (正解)
+  [259/900] window_0259 case_4852 t=130.1s true=Hydrodissection pred=Hydrodissection (正解)
+  [260/900] window_0260 case_4852 t=135.1s true=Hydrodissection pred=Hydrodissection (正解)
+  [261/900] window_0261 case_4852 t=140.1s true=Hydrodissection pred=Hydrodissection (正解)
+  [262/900] window_0262 case_4852 t=145.2s true=idle pred=idle (正解) transition@28
+  [263/900] window_0263 case_4852 t=150.2s true=Phacoemulsification pred=Phacoemulsification (正解) transition@13
+  [264/900] window_0264 case_4852 t=155.2s true=Phacoemulsification pred=Phacoemulsification (正解) transition@14
+  [265/900] window_0265 case_4852 t=160.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [266/900] window_0266 case_4852 t=165.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [267/900] window_0267 case_4852 t=170.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [268/900] window_0268 case_4852 t=175.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [269/900] window_0269 case_4852 t=180.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [270/900] window_0270 case_4852 t=185.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [271/900] window_0271 case_4852 t=190.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [272/900] window_0272 case_4852 t=195.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [273/900] window_0273 case_4852 t=200.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [274/900] window_0274 case_4852 t=205.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [275/900] window_0275 case_4852 t=210.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [276/900] window_0276 case_4852 t=215.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [277/900] window_0277 case_4852 t=220.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [278/900] window_0278 case_4852 t=225.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [279/900] window_0279 case_4852 t=230.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [280/900] window_0280 case_4852 t=235.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [281/900] window_0281 case_4852 t=240.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [282/900] window_0282 case_4852 t=245.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [283/900] window_0283 case_4852 t=250.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [284/900] window_0284 case_4852 t=255.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [285/900] window_0285 case_4852 t=260.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [286/900] window_0286 case_4852 t=265.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [287/900] window_0287 case_4852 t=270.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [288/900] window_0288 case_4852 t=275.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [289/900] window_0289 case_4852 t=280.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [290/900] window_0290 case_4852 t=285.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [291/900] window_0291 case_4852 t=290.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [292/900] window_0292 case_4852 t=295.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [293/900] window_0293 case_4852 t=300.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [294/900] window_0294 case_4852 t=305.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [295/900] window_0295 case_4852 t=310.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [296/900] window_0296 case_4852 t=315.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [297/900] window_0297 case_4852 t=320.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [298/900] window_0298 case_4852 t=325.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [299/900] window_0299 case_4852 t=330.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [300/900] window_0300 case_4852 t=335.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [301/900] window_0301 case_4852 t=340.3s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [302/900] window_0302 case_4852 t=345.4s true=idle pred=idle (正解) transition@28
+  [303/900] window_0303 case_4852 t=350.4s true=idle pred=idle (正解) transition@13
+  [304/900] window_0304 case_4852 t=355.4s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@24
+  [305/900] window_0305 case_4852 t=360.4s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@9
+  [306/900] window_0306 case_4852 t=365.4s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [307/900] window_0307 case_4852 t=370.4s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [308/900] window_0308 case_4852 t=375.4s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [309/900] window_0309 case_4852 t=380.4s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [310/900] window_0310 case_4852 t=385.4s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [311/900] window_0311 case_4852 t=390.4s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [312/900] window_0312 case_4852 t=395.4s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [313/900] window_0313 case_4852 t=400.4s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [314/900] window_0314 case_4852 t=405.4s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [315/900] window_0315 case_4852 t=410.4s true=CapsulePulishing pred=CapsulePulishing (正解) transition@20
+  [316/900] window_0316 case_4852 t=415.4s true=CapsulePulishing pred=CapsulePulishing (正解) transition@5
+  [317/900] window_0317 case_4852 t=420.4s true=CapsulePulishing pred=Viscoelastic (誤分類)
+  [318/900] window_0318 case_4852 t=425.4s true=CapsulePulishing pred=Viscoelastic (誤分類)
+  [319/900] window_0319 case_4852 t=430.4s true=idle pred=idle (正解) transition@23
+  [320/900] window_0320 case_4852 t=435.4s true=Viscoelastic pred=Viscoelastic (正解) transition@8
+  [321/900] window_0321 case_4852 t=440.4s true=idle pred=idle (正解) transition@24
+  [322/900] window_0322 case_4852 t=445.4s true=LensImplantation pred=LensImplantation (正解) transition@9
+  [323/900] window_0323 case_4852 t=450.4s true=LensImplantation pred=LensImplantation (正解) transition@6
+  [324/900] window_0324 case_4852 t=455.4s true=LensImplantation pred=LensImplantation (正解)
+  [325/900] window_0325 case_4852 t=460.5s true=LensImplantation pred=LensImplantation (正解)
+  [326/900] window_0326 case_4852 t=465.5s true=LensImplantation pred=LensImplantation (正解)
+  [327/900] window_0327 case_4852 t=470.5s true=LensImplantation pred=LensImplantation (正解)
+  [328/900] window_0328 case_4852 t=475.5s true=LensPositioning pred=LensPositioning (正解) transition@16
+  [329/900] window_0329 case_4852 t=480.5s true=LensPositioning pred=LensPositioning (正解) transition@8
+  [330/900] window_0330 case_4852 t=485.5s true=LensPositioning pred=LensPositioning (正解)
+  [331/900] window_0331 case_4852 t=490.5s true=LensPositioning pred=LensPositioning (正解)
+  [332/900] window_0332 case_4852 t=495.5s true=LensPositioning pred=LensPositioning (正解)
+  [333/900] window_0333 case_4852 t=500.5s true=LensPositioning pred=LensPositioning (正解)
+  [334/900] window_0334 case_4852 t=505.5s true=LensPositioning pred=LensPositioning (正解)
+  [335/900] window_0335 case_4852 t=510.5s true=idle pred=idle (正解) transition@28
+  [336/900] window_0336 case_4852 t=515.5s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@13
+  [337/900] window_0337 case_4852 t=520.5s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@6
+  [338/900] window_0338 case_4852 t=525.5s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [339/900] window_0339 case_4852 t=530.5s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [340/900] window_0340 case_4852 t=535.5s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [341/900] window_0341 case_4852 t=540.5s true=Anterior_ChamberFlushing pred=Tonifying_Antibiotics (誤分類) transition@19
+  [342/900] window_0342 case_4852 t=545.5s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@4
+  [343/900] window_0343 case_4852 t=550.5s true=idle pred=idle (正解) transition@27
+  [344/900] window_0344 case_4852 t=555.6s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@12
+  [345/900] window_0345 case_4852 t=560.6s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@3
+  [346/900] window_0346 case_4852 t=565.6s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [347/900] window_0347 case_4852 t=570.6s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@17
+  [348/900] window_0348 case_4852 t=575.6s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@2
+  [349/900] window_0349 case_4852 t=580.6s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解)
+  [350/900] window_0350 case_4874 t=0.0s true=idle pred=idle (正解)
+  [351/900] window_0351 case_4874 t=5.0s true=idle pred=idle (正解)
+  [352/900] window_0352 case_4874 t=10.0s true=idle pred=idle (正解)
+  [353/900] window_0353 case_4874 t=15.0s true=idle pred=idle (正解)
+  [354/900] window_0354 case_4874 t=20.0s true=idle pred=idle (正解)
+  [355/900] window_0355 case_4874 t=25.0s true=idle pred=Hydrodissection (誤分類)
+  [356/900] window_0356 case_4874 t=30.0s true=Incision pred=Incision (正解) transition@24
+  [357/900] window_0357 case_4874 t=35.0s true=Incision pred=Incision (正解) transition@9
+  [358/900] window_0358 case_4874 t=40.0s true=idle pred=idle (正解) transition@2
+  [359/900] window_0359 case_4874 t=45.0s true=Viscoelastic pred=Viscoelastic (正解) transition@10
+  [360/900] window_0360 case_4874 t=50.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@4
+  [361/900] window_0361 case_4874 t=55.0s true=Capsulorhexis pred=Phacoemulsification (誤分類) transition@4
+  [362/900] window_0362 case_4874 t=60.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [363/900] window_0363 case_4874 t=65.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [364/900] window_0364 case_4874 t=70.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [365/900] window_0365 case_4874 t=75.0s true=idle pred=idle (正解) transition@26
+  [366/900] window_0366 case_4874 t=80.0s true=Hydrodissection pred=Viscoelastic (誤分類) transition@11
+  [367/900] window_0367 case_4874 t=85.0s true=Hydrodissection pred=Hydrodissection (正解) transition@7
+  [368/900] window_0368 case_4874 t=90.0s true=Hydrodissection pred=Hydrodissection (正解) transition@16
+  [369/900] window_0369 case_4874 t=95.0s true=Hydrodissection pred=Hydrodissection (正解) transition@2
+  [370/900] window_0370 case_4874 t=100.0s true=Hydrodissection pred=idle (誤分類)
+  [371/900] window_0371 case_4874 t=105.0s true=idle pred=idle (正解) transition@30
+  [372/900] window_0372 case_4874 t=110.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類) transition@15
+  [373/900] window_0373 case_4874 t=115.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類) transition@11
+  [374/900] window_0374 case_4874 t=120.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [375/900] window_0375 case_4874 t=125.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [376/900] window_0376 case_4874 t=130.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [377/900] window_0377 case_4874 t=135.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [378/900] window_0378 case_4874 t=140.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類)
+  [379/900] window_0379 case_4874 t=145.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [380/900] window_0380 case_4874 t=150.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [381/900] window_0381 case_4874 t=155.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [382/900] window_0382 case_4874 t=160.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [383/900] window_0383 case_4874 t=165.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [384/900] window_0384 case_4874 t=170.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類)
+  [385/900] window_0385 case_4874 t=175.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類)
+  [386/900] window_0386 case_4874 t=180.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類)
+  [387/900] window_0387 case_4874 t=185.0s true=idle pred=idle (正解) transition@22
+  [388/900] window_0388 case_4874 t=190.0s true=idle pred=idle (正解) transition@7
+  [389/900] window_0389 case_4874 t=195.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@16
+  [390/900] window_0390 case_4874 t=200.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [391/900] window_0391 case_4874 t=205.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [392/900] window_0392 case_4874 t=210.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [393/900] window_0393 case_4874 t=215.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [394/900] window_0394 case_4874 t=220.0s true=idle pred=idle (正解) transition@30
+  [395/900] window_0395 case_4874 t=225.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@15
+  [396/900] window_0396 case_4874 t=230.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@10
+  [397/900] window_0397 case_4874 t=235.0s true=Viscoelastic pred=CapsulePulishing (誤分類) transition@20
+  [398/900] window_0398 case_4874 t=240.0s true=idle pred=idle (正解) transition@5
+  [399/900] window_0399 case_4874 t=245.0s true=LensImplantation pred=LensImplantation (正解) transition@14
+  [400/900] window_0400 case_4874 t=250.0s true=LensImplantation pred=LensImplantation (正解) transition@4
+  [401/900] window_0401 case_4874 t=255.0s true=LensPositioning pred=LensPositioning (正解) transition@16
+  [402/900] window_0402 case_4874 t=260.0s true=LensPositioning pred=LensPositioning (正解) transition@7
+  [403/900] window_0403 case_4874 t=265.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@23
+  [404/900] window_0404 case_4874 t=270.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@8
+  [405/900] window_0405 case_4874 t=275.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [406/900] window_0406 case_4874 t=280.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [407/900] window_0407 case_4874 t=285.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [408/900] window_0408 case_4874 t=290.0s true=Anterior_ChamberFlushing pred=Viscoelastic_Suction (誤分類) transition@18
+  [409/900] window_0409 case_4874 t=295.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@3
+  [410/900] window_0410 case_4874 t=300.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解)
+  [411/900] window_0411 case_4874 t=305.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@16
+  [412/900] window_0412 case_4874 t=310.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@9
+  [413/900] window_0413 case_4874 t=315.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@16
+  [414/900] window_0414 case_4924 t=0.0s true=Incision pred=Incision (正解)
+  [415/900] window_0415 case_4924 t=5.0s true=Incision pred=Incision (正解)
+  [416/900] window_0416 case_4924 t=10.0s true=idle pred=idle (正解) transition@19
+  [417/900] window_0417 case_4924 t=15.0s true=Incision pred=Incision (正解) transition@4
+  [418/900] window_0418 case_4924 t=20.0s true=idle pred=idle (正解) transition@16
+  [419/900] window_0419 case_4924 t=25.0s true=idle pred=idle (正解)
+  [420/900] window_0420 case_4924 t=30.0s true=Viscoelastic pred=Viscoelastic (正解) transition@22
+  [421/900] window_0421 case_4924 t=35.0s true=Viscoelastic pred=Viscoelastic (正解) transition@7
+  [422/900] window_0422 case_4924 t=40.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@19
+  [423/900] window_0423 case_4924 t=45.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@4
+  [424/900] window_0424 case_4924 t=50.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [425/900] window_0425 case_4924 t=55.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [426/900] window_0426 case_4924 t=60.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [427/900] window_0427 case_4924 t=65.0s true=Hydrodissection pred=Capsulorhexis (誤分類) transition@19
+  [428/900] window_0428 case_4924 t=70.0s true=Hydrodissection pred=Hydrodissection (正解) transition@4
+  [429/900] window_0429 case_4924 t=75.0s true=Hydrodissection pred=Hydrodissection (正解)
+  [430/900] window_0430 case_4924 t=80.0s true=Hydrodissection pred=Hydrodissection (正解)
+  [431/900] window_0431 case_4924 t=85.0s true=Hydrodissection pred=Hydrodissection (正解)
+  [432/900] window_0432 case_4924 t=90.0s true=Hydrodissection pred=Hydrodissection (正解)
+  [433/900] window_0433 case_4924 t=95.0s true=Hydrodissection pred=Hydrodissection (正解)
+  [434/900] window_0434 case_4924 t=100.0s true=idle pred=idle (正解) transition@25
+  [435/900] window_0435 case_4924 t=105.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@10
+  [436/900] window_0436 case_4924 t=110.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@2
+  [437/900] window_0437 case_4924 t=115.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [438/900] window_0438 case_4924 t=120.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [439/900] window_0439 case_4924 t=125.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [440/900] window_0440 case_4924 t=130.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [441/900] window_0441 case_4924 t=135.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [442/900] window_0442 case_4924 t=140.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [443/900] window_0443 case_4924 t=145.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [444/900] window_0444 case_4924 t=150.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類)
+  [445/900] window_0445 case_4924 t=155.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類)
+  [446/900] window_0446 case_4924 t=160.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [447/900] window_0447 case_4924 t=165.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [448/900] window_0448 case_4924 t=170.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [449/900] window_0449 case_4924 t=175.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [450/900] window_0450 case_4924 t=180.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [451/900] window_0451 case_4924 t=185.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [452/900] window_0452 case_4924 t=190.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [453/900] window_0453 case_4924 t=195.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [454/900] window_0454 case_4924 t=200.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [455/900] window_0455 case_4924 t=205.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [456/900] window_0456 case_4924 t=210.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [457/900] window_0457 case_4924 t=215.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [458/900] window_0458 case_4924 t=220.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [459/900] window_0459 case_4924 t=225.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [460/900] window_0460 case_4924 t=230.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [461/900] window_0461 case_4924 t=235.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [462/900] window_0462 case_4924 t=240.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [463/900] window_0463 case_4924 t=245.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [464/900] window_0464 case_4924 t=250.0s true=idle pred=idle (正解) transition@18
+  [465/900] window_0465 case_4924 t=255.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@3
+  [466/900] window_0466 case_4924 t=260.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@9
+  [467/900] window_0467 case_4924 t=265.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [468/900] window_0468 case_4924 t=270.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [469/900] window_0469 case_4924 t=275.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [470/900] window_0470 case_4924 t=280.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [471/900] window_0471 case_4924 t=285.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [472/900] window_0472 case_4924 t=290.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [473/900] window_0473 case_4924 t=295.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [474/900] window_0474 case_4924 t=300.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [475/900] window_0475 case_4924 t=305.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [476/900] window_0476 case_4924 t=310.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [477/900] window_0477 case_4924 t=315.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [478/900] window_0478 case_4924 t=320.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [479/900] window_0479 case_4924 t=325.0s true=idle pred=idle (正解) transition@26
+  [480/900] window_0480 case_4924 t=330.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@11
+  [481/900] window_0481 case_4924 t=335.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@7
+  [482/900] window_0482 case_4924 t=340.0s true=CapsulePulishing pred=CapsulePulishing (正解)
+  [483/900] window_0483 case_4924 t=345.0s true=CapsulePulishing pred=idle (誤分類)
+  [484/900] window_0484 case_4924 t=350.0s true=CapsulePulishing pred=CapsulePulishing (正解)
+  [485/900] window_0485 case_4924 t=355.0s true=CapsulePulishing pred=CapsulePulishing (正解)
+  [486/900] window_0486 case_4924 t=360.0s true=idle pred=idle (正解) transition@26
+  [487/900] window_0487 case_4924 t=365.0s true=idle pred=idle (正解) transition@11
+  [488/900] window_0488 case_4924 t=370.0s true=Viscoelastic pred=Viscoelastic (正解) transition@20
+  [489/900] window_0489 case_4924 t=375.0s true=idle pred=idle (正解) transition@5
+  [490/900] window_0490 case_4924 t=380.0s true=LensImplantation pred=LensImplantation (正解) transition@11
+  [491/900] window_0491 case_4924 t=385.0s true=LensImplantation pred=LensImplantation (正解) transition@2
+  [492/900] window_0492 case_4924 t=390.0s true=LensImplantation pred=LensImplantation (正解)
+  [493/900] window_0493 case_4924 t=395.0s true=LensImplantation pred=LensImplantation (正解)
+  [494/900] window_0494 case_4924 t=400.0s true=LensImplantation pred=LensImplantation (正解)
+  [495/900] window_0495 case_4924 t=405.0s true=LensImplantation pred=LensPositioning (誤分類)
+  [496/900] window_0496 case_4924 t=410.0s true=idle pred=idle (正解) transition@30
+  [497/900] window_0497 case_4924 t=415.0s true=LensPositioning pred=Anterior_ChamberFlushing (誤分類) transition@15
+  [498/900] window_0498 case_4924 t=420.0s true=LensPositioning pred=Anterior_ChamberFlushing (誤分類) transition@9
+  [499/900] window_0499 case_4924 t=425.0s true=LensPositioning pred=Anterior_ChamberFlushing (誤分類)
+  [500/900] window_0500 case_4924 t=430.0s true=LensPositioning pred=Anterior_ChamberFlushing (誤分類)
+  [501/900] window_0501 case_4924 t=435.0s true=LensPositioning pred=Anterior_ChamberFlushing (誤分類)
+  [502/900] window_0502 case_4924 t=440.0s true=idle pred=idle (正解) transition@29
+  [503/900] window_0503 case_4924 t=445.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@14
+  [504/900] window_0504 case_4924 t=450.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@8
+  [505/900] window_0505 case_4924 t=455.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [506/900] window_0506 case_4924 t=460.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [507/900] window_0507 case_4924 t=465.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [508/900] window_0508 case_4924 t=470.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [509/900] window_0509 case_4924 t=475.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [510/900] window_0510 case_4924 t=480.0s true=idle pred=idle (正解) transition@26
+  [511/900] window_0511 case_4924 t=485.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@11
+  [512/900] window_0512 case_4924 t=490.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@2
+  [513/900] window_0513 case_4924 t=495.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@24
+  [514/900] window_0514 case_4924 t=500.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@9
+  [515/900] window_0515 case_4924 t=505.0s true=idle pred=idle (正解) transition@28
+  [516/900] window_0516 case_4924 t=510.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@13
+  [517/900] window_0517 case_4924 t=515.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@6
+  [518/900] window_0518 case_4924 t=520.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [519/900] window_0519 case_4924 t=525.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [520/900] window_0520 case_4924 t=530.0s true=idle pred=idle (正解) transition@29
+  [521/900] window_0521 case_4924 t=535.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@14
+  [522/900] window_0522 case_4924 t=540.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@6
+  [523/900] window_0523 case_4924 t=545.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解)
+  [524/900] window_0524 case_4924 t=550.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@22
+  [525/900] window_0525 case_4924 t=555.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@7
+  [526/900] window_0526 case_4924 t=560.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解)
+  [527/900] window_0527 case_4924 t=565.0s true=Tonifying_Antibiotics pred=idle (誤分類)
+  [528/900] window_0528 case_5015 t=0.0s true=idle pred=idle (正解)
+  [529/900] window_0529 case_5015 t=5.0s true=Incision pred=Incision (正解) transition@21
+  [530/900] window_0530 case_5015 t=10.0s true=Incision pred=Incision (正解) transition@6
+  [531/900] window_0531 case_5015 t=15.0s true=idle pred=idle (正解) transition@3
+  [532/900] window_0532 case_5015 t=20.0s true=Viscoelastic pred=Viscoelastic (正解) transition@8
+  [533/900] window_0533 case_5015 t=25.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@2
+  [534/900] window_0534 case_5015 t=30.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@6
+  [535/900] window_0535 case_5015 t=35.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [536/900] window_0536 case_5015 t=40.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [537/900] window_0537 case_5015 t=45.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [538/900] window_0538 case_5015 t=50.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [539/900] window_0539 case_5015 t=55.0s true=Hydrodissection pred=idle (誤分類) transition@24
+  [540/900] window_0540 case_5015 t=60.0s true=Hydrodissection pred=Hydrodissection (正解) transition@9
+  [541/900] window_0541 case_5015 t=65.0s true=Hydrodissection pred=Hydrodissection (正解)
+  [542/900] window_0542 case_5015 t=70.0s true=idle pred=idle (正解) transition@23
+  [543/900] window_0543 case_5015 t=75.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@8
+  [544/900] window_0544 case_5015 t=80.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@7
+  [545/900] window_0545 case_5015 t=85.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [546/900] window_0546 case_5015 t=90.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [547/900] window_0547 case_5015 t=95.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [548/900] window_0548 case_5015 t=100.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [549/900] window_0549 case_5015 t=105.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [550/900] window_0550 case_5015 t=110.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [551/900] window_0551 case_5015 t=115.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [552/900] window_0552 case_5015 t=120.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [553/900] window_0553 case_5015 t=125.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [554/900] window_0554 case_5015 t=130.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [555/900] window_0555 case_5015 t=135.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [556/900] window_0556 case_5015 t=140.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [557/900] window_0557 case_5015 t=145.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [558/900] window_0558 case_5015 t=150.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [559/900] window_0559 case_5015 t=155.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [560/900] window_0560 case_5015 t=160.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [561/900] window_0561 case_5015 t=165.0s true=Phacoemulsification pred=idle (誤分類)
+  [562/900] window_0562 case_5015 t=170.0s true=idle pred=idle (正解) transition@16
+  [563/900] window_0563 case_5015 t=175.0s true=Irrigation_Aspiration pred=CapsulePulishing (誤分類) transition@25
+  [564/900] window_0564 case_5015 t=180.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@10
+  [565/900] window_0565 case_5015 t=185.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [566/900] window_0566 case_5015 t=190.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [567/900] window_0567 case_5015 t=195.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [568/900] window_0568 case_5015 t=200.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [569/900] window_0569 case_5015 t=205.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [570/900] window_0570 case_5015 t=210.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [571/900] window_0571 case_5015 t=215.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [572/900] window_0572 case_5015 t=220.0s true=idle pred=idle (正解) transition@25
+  [573/900] window_0573 case_5015 t=225.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@10
+  [574/900] window_0574 case_5015 t=230.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@6
+  [575/900] window_0575 case_5015 t=235.0s true=Viscoelastic pred=CapsulePulishing (誤分類) transition@16
+  [576/900] window_0576 case_5015 t=240.0s true=LensImplantation pred=LensImplantation (正解) transition@6
+  [577/900] window_0577 case_5015 t=245.0s true=LensImplantation pred=LensImplantation (正解) transition@7
+  [578/900] window_0578 case_5015 t=250.0s true=LensImplantation pred=LensImplantation (正解)
+  [579/900] window_0579 case_5015 t=255.0s true=LensPositioning pred=LensImplantation (誤分類) transition@26
+  [580/900] window_0580 case_5015 t=260.0s true=LensPositioning pred=Anterior_ChamberFlushing (誤分類) transition@11
+  [581/900] window_0581 case_5015 t=265.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@19
+  [582/900] window_0582 case_5015 t=270.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@4
+  [583/900] window_0583 case_5015 t=275.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [584/900] window_0584 case_5015 t=280.0s true=Viscoelastic_Suction pred=idle (誤分類)
+  [585/900] window_0585 case_5015 t=285.0s true=Anterior_ChamberFlushing pred=Tonifying_Antibiotics (誤分類) transition@17
+  [586/900] window_0586 case_5015 t=290.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@2
+  [587/900] window_0587 case_5015 t=295.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解)
+  [588/900] window_0588 case_5015 t=300.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@18
+  [589/900] window_0589 case_5015 t=305.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@3
+  [590/900] window_0590 case_5015 t=310.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [591/900] window_0591 case_5015 t=315.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@16
+  [592/900] window_0592 case_5015 t=320.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@7
+  [593/900] window_0593 case_5015 t=325.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解)
+  [594/900] window_0594 case_5015 t=330.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@19
+  [595/900] window_0595 case_5063 t=0.0s true=idle pred=idle (正解)
+  [596/900] window_0596 case_5063 t=5.0s true=Incision pred=Incision (正解) transition@25
+  [597/900] window_0597 case_5063 t=10.0s true=Incision pred=Incision (正解) transition@10
+  [598/900] window_0598 case_5063 t=15.0s true=idle pred=idle (正解) transition@5
+  [599/900] window_0599 case_5063 t=20.0s true=Viscoelastic pred=Viscoelastic (正解) transition@7
+  [600/900] window_0600 case_5063 t=25.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@3
+  [601/900] window_0601 case_5063 t=30.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@7
+  [602/900] window_0602 case_5063 t=35.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [603/900] window_0603 case_5063 t=40.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [604/900] window_0604 case_5063 t=45.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [605/900] window_0605 case_5063 t=50.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [606/900] window_0606 case_5063 t=55.0s true=Hydrodissection pred=Hydrodissection (正解) transition@16
+  [607/900] window_0607 case_5063 t=60.0s true=Hydrodissection pred=Hydrodissection (正解) transition@10
+  [608/900] window_0608 case_5063 t=65.0s true=Hydrodissection pred=Hydrodissection (正解)
+  [609/900] window_0609 case_5063 t=70.0s true=idle pred=Phacoemulsification (誤分類) transition@19
+  [610/900] window_0610 case_5063 t=75.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@4
+  [611/900] window_0611 case_5063 t=80.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@15
+  [612/900] window_0612 case_5063 t=85.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [613/900] window_0613 case_5063 t=90.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [614/900] window_0614 case_5063 t=95.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [615/900] window_0615 case_5063 t=100.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [616/900] window_0616 case_5063 t=105.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [617/900] window_0617 case_5063 t=110.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [618/900] window_0618 case_5063 t=115.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [619/900] window_0619 case_5063 t=120.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [620/900] window_0620 case_5063 t=125.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [621/900] window_0621 case_5063 t=130.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [622/900] window_0622 case_5063 t=135.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [623/900] window_0623 case_5063 t=140.0s true=idle pred=idle (正解) transition@24
+  [624/900] window_0624 case_5063 t=145.0s true=idle pred=idle (正解) transition@9
+  [625/900] window_0625 case_5063 t=150.0s true=idle pred=idle (正解)
+  [626/900] window_0626 case_5063 t=155.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@21
+  [627/900] window_0627 case_5063 t=160.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@6
+  [628/900] window_0628 case_5063 t=165.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [629/900] window_0629 case_5063 t=170.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [630/900] window_0630 case_5063 t=175.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [631/900] window_0631 case_5063 t=180.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [632/900] window_0632 case_5063 t=185.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [633/900] window_0633 case_5063 t=190.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [634/900] window_0634 case_5063 t=195.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [635/900] window_0635 case_5063 t=200.0s true=Irrigation_Aspiration pred=idle (誤分類)
+  [636/900] window_0636 case_5063 t=205.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@16
+  [637/900] window_0637 case_5063 t=210.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@5
+  [638/900] window_0638 case_5063 t=215.0s true=idle pred=idle (正解) transition@27
+  [639/900] window_0639 case_5063 t=220.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@12
+  [640/900] window_0640 case_5063 t=225.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@3
+  [641/900] window_0641 case_5063 t=230.0s true=CapsulePulishing pred=idle (誤分類)
+  [642/900] window_0642 case_5063 t=235.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@19
+  [643/900] window_0643 case_5063 t=240.0s true=idle pred=idle (正解) transition@4
+  [644/900] window_0644 case_5063 t=245.0s true=Viscoelastic pred=Viscoelastic (正解) transition@9
+  [645/900] window_0645 case_5063 t=250.0s true=LensImplantation pred=LensImplantation (正解) transition@16
+  [646/900] window_0646 case_5063 t=255.0s true=LensImplantation pred=LensImplantation (正解) transition@6
+  [647/900] window_0647 case_5063 t=260.0s true=LensPositioning pred=LensPositioning (正解) transition@24
+  [648/900] window_0648 case_5063 t=265.0s true=LensPositioning pred=idle (誤分類) transition@9
+  [649/900] window_0649 case_5063 t=270.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@16
+  [650/900] window_0650 case_5063 t=275.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@5
+  [651/900] window_0651 case_5063 t=280.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [652/900] window_0652 case_5063 t=285.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [653/900] window_0653 case_5063 t=290.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@16
+  [654/900] window_0654 case_5063 t=295.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@2
+  [655/900] window_0655 case_5063 t=300.0s true=idle pred=idle (正解) transition@22
+  [656/900] window_0656 case_5063 t=305.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@7
+  [657/900] window_0657 case_5063 t=310.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@3
+  [658/900] window_0658 case_5063 t=315.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解)
+  [659/900] window_0659 case_5063 t=320.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解)
+  [660/900] window_0660 case_5063 t=325.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解)
+  [661/900] window_0661 case_5063 t=330.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解)
+  [662/900] window_0662 case_5063 t=335.0s true=Tonifying_Antibiotics pred=Anterior_ChamberFlushing (誤分類)
+  [663/900] window_0663 case_5063 t=340.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解)
+  [664/900] window_0664 case_5063 t=345.0s true=idle pred=idle (正解) transition@26
+  [665/900] window_0665 case_5063 t=350.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@11
+  [666/900] window_0666 case_5063 t=355.0s true=idle pred=idle (正解) transition@8
+  [667/900] window_0667 case_5063 t=360.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@14
+  [668/900] window_0668 case_5063 t=365.0s true=idle pred=idle (正解) transition@11
+  [669/900] window_0669 case_5063 t=370.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@14
+  [670/900] window_0670 case_5300 t=0.0s true=idle pred=Incision (誤分類)
+  [671/900] window_0671 case_5300 t=5.0s true=idle pred=idle (正解)
+  [672/900] window_0672 case_5300 t=10.0s true=idle pred=idle (正解) transition@20
+  [673/900] window_0673 case_5300 t=15.0s true=Incision pred=Incision (正解) transition@5
+  [674/900] window_0674 case_5300 t=20.0s true=Viscoelastic pred=Viscoelastic (正解) transition@8
+  [675/900] window_0675 case_5300 t=25.0s true=idle pred=Viscoelastic (誤分類) transition@2
+  [676/900] window_0676 case_5300 t=30.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@9
+  [677/900] window_0677 case_5300 t=35.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@3
+  [678/900] window_0678 case_5300 t=40.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [679/900] window_0679 case_5300 t=45.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [680/900] window_0680 case_5300 t=50.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [681/900] window_0681 case_5300 t=55.0s true=idle pred=idle (正解) transition@24
+  [682/900] window_0682 case_5300 t=60.0s true=Hydrodissection pred=Hydrodissection (正解) transition@9
+  [683/900] window_0683 case_5300 t=65.0s true=Hydrodissection pred=Hydrodissection (正解) transition@3
+  [684/900] window_0684 case_5300 t=70.0s true=Hydrodissection pred=idle (誤分類)
+  [685/900] window_0685 case_5300 t=75.0s true=idle pred=idle (正解) transition@30
+  [686/900] window_0686 case_5300 t=80.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@15
+  [687/900] window_0687 case_5300 t=85.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@12
+  [688/900] window_0688 case_5300 t=90.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [689/900] window_0689 case_5300 t=95.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [690/900] window_0690 case_5300 t=100.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [691/900] window_0691 case_5300 t=105.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [692/900] window_0692 case_5300 t=110.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [693/900] window_0693 case_5300 t=115.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [694/900] window_0694 case_5300 t=120.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [695/900] window_0695 case_5300 t=125.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [696/900] window_0696 case_5300 t=130.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [697/900] window_0697 case_5300 t=135.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [698/900] window_0698 case_5300 t=140.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [699/900] window_0699 case_5300 t=145.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [700/900] window_0700 case_5300 t=150.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [701/900] window_0701 case_5300 t=155.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [702/900] window_0702 case_5300 t=160.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [703/900] window_0703 case_5300 t=165.0s true=idle pred=idle (正解) transition@29
+  [704/900] window_0704 case_5300 t=170.0s true=idle pred=idle (正解) transition@14
+  [705/900] window_0705 case_5300 t=175.0s true=idle pred=idle (正解)
+  [706/900] window_0706 case_5300 t=180.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@16
+  [707/900] window_0707 case_5300 t=185.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [708/900] window_0708 case_5300 t=190.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [709/900] window_0709 case_5300 t=195.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [710/900] window_0710 case_5300 t=200.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [711/900] window_0711 case_5300 t=205.0s true=idle pred=idle (正解) transition@19
+  [712/900] window_0712 case_5300 t=210.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@4
+  [713/900] window_0713 case_5300 t=215.0s true=CapsulePulishing pred=CapsulePulishing (正解) transition@2
+  [714/900] window_0714 case_5300 t=220.0s true=idle pred=idle (正解) transition@13
+  [715/900] window_0715 case_5300 t=225.0s true=idle pred=idle (正解) transition@9
+  [716/900] window_0716 case_5300 t=230.0s true=LensImplantation pred=LensImplantation (正解) transition@2
+  [717/900] window_0717 case_5300 t=235.0s true=LensImplantation pred=LensImplantation (正解) transition@3
+  [718/900] window_0718 case_5300 t=240.0s true=LensPositioning pred=LensPositioning (正解) transition@20
+  [719/900] window_0719 case_5300 t=245.0s true=idle pred=idle (正解) transition@5
+  [720/900] window_0720 case_5300 t=250.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@12
+  [721/900] window_0721 case_5300 t=255.0s true=idle pred=idle (正解) transition@30
+  [722/900] window_0722 case_5300 t=260.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@15
+  [723/900] window_0723 case_5300 t=265.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@11
+  [724/900] window_0724 case_5300 t=270.0s true=idle pred=idle (正解) transition@27
+  [725/900] window_0725 case_5300 t=275.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@12
+  [726/900] window_0726 case_5300 t=280.0s true=Tonifying_Antibiotics pred=idle (誤分類) transition@3
+  [727/900] window_0727 case_5300 t=285.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@7
+  [728/900] window_0728 case_5300 t=290.0s true=idle pred=idle (正解) transition@30
+  [729/900] window_0729 case_5300 t=295.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@15
+  [730/900] window_0730 case_5300 t=300.0s true=idle pred=idle (正解) transition@6
+  [731/900] window_0731 case_5300 t=305.0s true=idle pred=idle (正解) transition@8
+  [732/900] window_0732 case_5315 t=0.0s true=idle pred=idle (正解)
+  [733/900] window_0733 case_5315 t=5.0s true=Incision pred=Incision (正解) transition@25
+  [734/900] window_0734 case_5315 t=10.0s true=Incision pred=Incision (正解) transition@10
+  [735/900] window_0735 case_5315 t=15.0s true=Viscoelastic pred=Viscoelastic (正解) transition@4
+  [736/900] window_0736 case_5315 t=20.0s true=idle pred=idle (正解) transition@4
+  [737/900] window_0737 case_5315 t=25.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@8
+  [738/900] window_0738 case_5315 t=30.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [739/900] window_0739 case_5315 t=35.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [740/900] window_0740 case_5315 t=40.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [741/900] window_0741 case_5315 t=45.0s true=idle pred=idle (正解) transition@30
+  [742/900] window_0742 case_5315 t=50.0s true=Hydrodissection pred=Hydrodissection (正解) transition@15
+  [743/900] window_0743 case_5315 t=55.0s true=Hydrodissection pred=Hydrodissection (正解) transition@6
+  [744/900] window_0744 case_5315 t=60.1s true=idle pred=idle (正解) transition@28
+  [745/900] window_0745 case_5315 t=65.1s true=idle pred=idle (正解) transition@13
+  [746/900] window_0746 case_5315 t=70.1s true=idle pred=idle (正解)
+  [747/900] window_0747 case_5315 t=75.1s true=idle pred=idle (正解)
+  [748/900] window_0748 case_5315 t=80.1s true=Phacoemulsification pred=Phacoemulsification (正解) transition@24
+  [749/900] window_0749 case_5315 t=85.1s true=Phacoemulsification pred=Phacoemulsification (正解) transition@9
+  [750/900] window_0750 case_5315 t=90.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [751/900] window_0751 case_5315 t=95.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [752/900] window_0752 case_5315 t=100.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [753/900] window_0753 case_5315 t=105.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [754/900] window_0754 case_5315 t=110.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [755/900] window_0755 case_5315 t=115.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [756/900] window_0756 case_5315 t=120.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [757/900] window_0757 case_5315 t=125.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [758/900] window_0758 case_5315 t=130.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [759/900] window_0759 case_5315 t=135.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [760/900] window_0760 case_5315 t=140.1s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [761/900] window_0761 case_5315 t=145.2s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [762/900] window_0762 case_5315 t=150.2s true=Phacoemulsification pred=idle (誤分類)
+  [763/900] window_0763 case_5315 t=155.2s true=idle pred=idle (正解) transition@16
+  [764/900] window_0764 case_5315 t=160.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@27
+  [765/900] window_0765 case_5315 t=165.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@12
+  [766/900] window_0766 case_5315 t=170.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [767/900] window_0767 case_5315 t=175.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [768/900] window_0768 case_5315 t=180.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [769/900] window_0769 case_5315 t=185.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [770/900] window_0770 case_5315 t=190.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [771/900] window_0771 case_5315 t=195.2s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [772/900] window_0772 case_5315 t=200.2s true=idle pred=idle (正解) transition@30
+  [773/900] window_0773 case_5315 t=205.2s true=CapsulePulishing pred=CapsulePulishing (正解) transition@15
+  [774/900] window_0774 case_5315 t=210.2s true=CapsulePulishing pred=CapsulePulishing (正解) transition@8
+  [775/900] window_0775 case_5315 t=215.2s true=CapsulePulishing pred=idle (誤分類)
+  [776/900] window_0776 case_5315 t=220.2s true=idle pred=idle (正解) transition@27
+  [777/900] window_0777 case_5315 t=225.2s true=CapsulePulishing pred=CapsulePulishing (正解) transition@12
+  [778/900] window_0778 case_5315 t=230.2s true=CapsulePulishing pred=CapsulePulishing (正解) transition@7
+  [779/900] window_0779 case_5315 t=235.2s true=idle pred=idle (正解) transition@29
+  [780/900] window_0780 case_5315 t=240.2s true=idle pred=idle (正解) transition@14
+  [781/900] window_0781 case_5315 t=245.2s true=CapsulePulishing pred=CapsulePulishing (正解) transition@17
+  [782/900] window_0782 case_5315 t=250.2s true=idle pred=idle (正解) transition@2
+  [783/900] window_0783 case_5315 t=255.2s true=Viscoelastic pred=Viscoelastic (正解) transition@14
+  [784/900] window_0784 case_5315 t=260.3s true=LensImplantation pred=LensImplantation (正解) transition@7
+  [785/900] window_0785 case_5315 t=265.3s true=LensImplantation pred=LensImplantation (正解) transition@5
+  [786/900] window_0786 case_5315 t=270.3s true=LensImplantation pred=LensImplantation (正解)
+  [787/900] window_0787 case_5315 t=275.3s true=LensPositioning pred=LensPositioning (正解) transition@21
+  [788/900] window_0788 case_5315 t=280.3s true=LensPositioning pred=idle (誤分類) transition@6
+  [789/900] window_0789 case_5315 t=285.3s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@18
+  [790/900] window_0790 case_5315 t=290.3s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@3
+  [791/900] window_0791 case_5315 t=295.3s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [792/900] window_0792 case_5315 t=300.3s true=idle pred=idle (正解) transition@30
+  [793/900] window_0793 case_5315 t=305.3s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@15
+  [794/900] window_0794 case_5315 t=310.3s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@8
+  [795/900] window_0795 case_5315 t=315.3s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解)
+  [796/900] window_0796 case_5315 t=320.3s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解)
+  [797/900] window_0797 case_5315 t=325.3s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@18
+  [798/900] window_0798 case_5315 t=330.3s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@3
+  [799/900] window_0799 case_5315 t=335.3s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [800/900] window_0800 case_5315 t=340.3s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [801/900] window_0801 case_5315 t=345.4s true=Tonifying_Antibiotics pred=idle (誤分類) transition@23
+  [802/900] window_0802 case_5315 t=350.4s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@8
+  [803/900] window_0803 case_5315 t=355.4s true=idle pred=idle (正解) transition@26
+  [804/900] window_0804 case_5315 t=360.4s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@11
+  [805/900] window_0805 case_5315 t=365.4s true=idle pred=idle (正解) transition@4
+  [806/900] window_0806 case_5331 t=0.0s true=idle pred=idle (正解)
+  [807/900] window_0807 case_5331 t=5.0s true=idle pred=idle (正解) transition@16
+  [808/900] window_0808 case_5331 t=10.0s true=Incision pred=Incision (正解) transition@14
+  [809/900] window_0809 case_5331 t=15.0s true=idle pred=idle (正解) transition@10
+  [810/900] window_0810 case_5331 t=20.0s true=Viscoelastic pred=Viscoelastic (正解) transition@7
+  [811/900] window_0811 case_5331 t=25.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@4
+  [812/900] window_0812 case_5331 t=30.0s true=Capsulorhexis pred=Capsulorhexis (正解) transition@3
+  [813/900] window_0813 case_5331 t=35.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [814/900] window_0814 case_5331 t=40.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [815/900] window_0815 case_5331 t=45.0s true=Capsulorhexis pred=Capsulorhexis (正解)
+  [816/900] window_0816 case_5331 t=50.0s true=idle pred=idle (正解) transition@25
+  [817/900] window_0817 case_5331 t=55.0s true=Hydrodissection pred=Hydrodissection (正解) transition@10
+  [818/900] window_0818 case_5331 t=60.0s true=Hydrodissection pred=Hydrodissection (正解) transition@4
+  [819/900] window_0819 case_5331 t=65.0s true=Hydrodissection pred=Hydrodissection (正解)
+  [820/900] window_0820 case_5331 t=70.0s true=Hydrodissection pred=Hydrodissection (正解)
+  [821/900] window_0821 case_5331 t=75.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@16
+  [822/900] window_0822 case_5331 t=80.0s true=Phacoemulsification pred=Phacoemulsification (正解) transition@12
+  [823/900] window_0823 case_5331 t=85.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [824/900] window_0824 case_5331 t=90.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [825/900] window_0825 case_5331 t=95.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [826/900] window_0826 case_5331 t=100.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [827/900] window_0827 case_5331 t=105.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [828/900] window_0828 case_5331 t=110.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [829/900] window_0829 case_5331 t=115.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [830/900] window_0830 case_5331 t=120.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [831/900] window_0831 case_5331 t=125.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [832/900] window_0832 case_5331 t=130.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類)
+  [833/900] window_0833 case_5331 t=135.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [834/900] window_0834 case_5331 t=140.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [835/900] window_0835 case_5331 t=145.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類)
+  [836/900] window_0836 case_5331 t=150.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類)
+  [837/900] window_0837 case_5331 t=155.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [838/900] window_0838 case_5331 t=160.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [839/900] window_0839 case_5331 t=165.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [840/900] window_0840 case_5331 t=170.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [841/900] window_0841 case_5331 t=175.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類)
+  [842/900] window_0842 case_5331 t=180.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [843/900] window_0843 case_5331 t=185.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [844/900] window_0844 case_5331 t=190.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [845/900] window_0845 case_5331 t=195.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [846/900] window_0846 case_5331 t=200.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [847/900] window_0847 case_5331 t=205.0s true=Phacoemulsification pred=Phacoemulsification (正解)
+  [848/900] window_0848 case_5331 t=210.0s true=Phacoemulsification pred=Irrigation_Aspiration (誤分類)
+  [849/900] window_0849 case_5331 t=215.0s true=idle pred=idle (正解) transition@27
+  [850/900] window_0850 case_5331 t=220.0s true=idle pred=idle (正解) transition@12
+  [851/900] window_0851 case_5331 t=225.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@24
+  [852/900] window_0852 case_5331 t=230.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解) transition@9
+  [853/900] window_0853 case_5331 t=235.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [854/900] window_0854 case_5331 t=240.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [855/900] window_0855 case_5331 t=245.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [856/900] window_0856 case_5331 t=250.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [857/900] window_0857 case_5331 t=255.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [858/900] window_0858 case_5331 t=260.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [859/900] window_0859 case_5331 t=265.0s true=Irrigation_Aspiration pred=Irrigation_Aspiration (正解)
+  [860/900] window_0860 case_5331 t=270.0s true=idle pred=idle (正解) transition@25
+  [861/900] window_0861 case_5331 t=275.0s true=idle pred=CapsulePulishing (誤分類) transition@10
+  [862/900] window_0862 case_5331 t=280.0s true=CapsulePulishing pred=Viscoelastic (誤分類) transition@16
+  [863/900] window_0863 case_5331 t=285.0s true=Viscoelastic pred=Viscoelastic (正解) transition@17
+  [864/900] window_0864 case_5331 t=290.0s true=LensImplantation pred=idle (誤分類) transition@2
+  [865/900] window_0865 case_5331 t=295.0s true=LensImplantation pred=LensImplantation (正解) transition@8
+  [866/900] window_0866 case_5331 t=300.0s true=idle pred=LensPositioning (誤分類) transition@25
+  [867/900] window_0867 case_5331 t=305.0s true=idle pred=idle (正解) transition@10
+  [868/900] window_0868 case_5331 t=310.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@2
+  [869/900] window_0869 case_5331 t=315.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [870/900] window_0870 case_5331 t=320.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [871/900] window_0871 case_5331 t=325.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [872/900] window_0872 case_5331 t=330.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解)
+  [873/900] window_0873 case_5331 t=335.0s true=idle pred=idle (正解) transition@26
+  [874/900] window_0874 case_5331 t=340.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@11
+  [875/900] window_0875 case_5331 t=345.0s true=Anterior_ChamberFlushing pred=Anterior_ChamberFlushing (正解) transition@2
+  [876/900] window_0876 case_5331 t=350.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@23
+  [877/900] window_0877 case_5331 t=355.0s true=Viscoelastic_Suction pred=Viscoelastic_Suction (正解) transition@8
+  [878/900] window_0878 case_5331 t=360.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@20
+  [879/900] window_0879 case_5331 t=365.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@5
+  [880/900] window_0880 case_5331 t=370.0s true=Tonifying_Antibiotics pred=Tonifying_Antibiotics (正解) transition@3
+  [881/900] window_0881 case_5331 t=375.0s true=idle pred=idle (正解) transition@9
+
+完了。881件のウィンドウを解析しました（881件走査）。
+  サマリーCSV: attention_analysis\csv\attention_summary.csv
+  プロット: attention_analysis\plots/
+  生Attentionデータ: attention_analysis\raw/
+  説明: attention_analysis\README.md

@@ -6,8 +6,8 @@ from sklearn.model_selection import GroupKFold, GroupShuffleSplit
 #メモ：case番号ごとにtrain,val,testに分割してcsvファイルにまとめる
 # --- 設定項目 ---
 dataset_root = r"C:\Users\kit02\GitHub\Cataract-1K\Phase_recognition_dataset\Training_Dataset"
-output_csv = "dataset_index.csv"
-final_csv = "dataset_index_split.csv"
+output_csv = "data/dataset_index.csv"
+final_csv = "data/dataset_index_split.csv"
 
 phases = [
     "Incision", "Viscoelastic", "Capsulorhexis", "Hydrodissection",

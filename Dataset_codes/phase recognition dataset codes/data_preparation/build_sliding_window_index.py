@@ -43,7 +43,11 @@ from pathlib import Path
 import cv2
 import pandas as pd
 
-from gt_utils import native_frame_interval, load_ground_truth_intervals, true_phase_at
+import os as _os
+import sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
+from utils.gt_utils import native_frame_interval, load_ground_truth_intervals, true_phase_at
 
 PHASES = [
     "Incision", "Viscoelastic", "Capsulorhexis", "Hydrodissection",
@@ -59,9 +63,9 @@ OUTPUT_FPS = 30  # 書き出すクリップのfps。学習側(frame_interval=1)�
 VIDEO_DIR_TEMPLATE = "../../Phase_recognition_dataset/dataset_videos/phase_recognition/{case}.mp4"
 GT_CSV_TEMPLATE = "../../Phase_recognition_dataset/phase_recognition_annotations/{case}/{case}_annotations_phases.csv"
 
-DEFAULT_SPLIT_CSV = "dataset_index_split.csv"
+DEFAULT_SPLIT_CSV = "data/dataset_index_split.csv"
 DEFAULT_OUTPUT_DIR = Path("sliding_window_dataset")
-DEFAULT_OUTPUT_INDEX = "dataset_index_sliding_window.csv"
+DEFAULT_OUTPUT_INDEX = "data/dataset_index_sliding_window.csv"
 
 
 def load_case_split_fold_map(split_csv: str) -> dict:

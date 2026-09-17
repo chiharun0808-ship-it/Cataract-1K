@@ -2,7 +2,7 @@ import pandas as pd
 import torch
 
 
-def get_class_weights(csv_path='dataset_index_split.csv'):
+def get_class_weights(csv_path='data/dataset_index_split.csv'):
     df = pd.read_csv(csv_path)
 
     # 1. trainデータかつ、idle (12) を除外したデータにフィルタリング

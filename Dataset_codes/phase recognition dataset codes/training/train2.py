@@ -9,6 +9,11 @@ from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import f1_score, confusion_matrix
+
+import os as _os
+import sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 from dataset_index.prepare_dataset import SurgicalPhaseDataset
 from models.cnn_rnn_hybrids import create_cnn_rnn_model, CNN_RNN_MODELS
 from models.timesformer import create_timesformer_model, TIMESFORMER_MODELS
@@ -62,7 +67,7 @@ NUM_FOLDS = 5
 MODEL_NAMES = ["timesformer"]
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-csv_path = "dataset_index_split.csv"
+csv_path = "data/dataset_index_split.csv"
 batch_size = 4
 # TimeSformerのnum_framesはこの値と一致させる必要があるため、
 # SurgicalPhaseDatasetのsequence_lengthと共通の定数として定義する。

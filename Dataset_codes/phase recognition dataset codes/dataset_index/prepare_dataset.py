@@ -95,7 +95,7 @@ class SurgicalPhaseDataset(Dataset):
 # --- 動作確認用 ---
 if __name__ == "__main__":
     # 正しくsplit指定ができるか確認
-    dataset = SurgicalPhaseDataset("../dataset_index_split.csv", split='train', frame_interval=10, sequence_length=30)
+    dataset = SurgicalPhaseDataset("../data/dataset_index_split.csv", split='train', frame_interval=10, sequence_length=30)
 
     if len(dataset) > 0:
         video_tensor, label = dataset[0]

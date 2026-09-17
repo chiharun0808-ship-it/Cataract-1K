@@ -3,3 +3,12 @@ __pycache__/
 *.pth
 result/
 .idea/
+# phase recognition dataset codes: regenerable data/log artifacts
+Dataset_codes/phase recognition dataset codes/data/
+Dataset_codes/phase recognition dataset codes/logs/
+Dataset_codes/phase recognition dataset codes/outputs/
+Dataset_codes/phase recognition dataset codes/sliding_window_dataset/
+Dataset_codes/phase recognition dataset codes/sliding_window_dataset_stride5/
+.DS_Store
+Dataset_codes/phase recognition dataset codes/attention_analysis/*/raw/
+Dataset_codes/phase recognition dataset codes/attention_analysis/*/plots/

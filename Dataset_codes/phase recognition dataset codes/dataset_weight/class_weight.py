@@ -2,7 +2,7 @@ import pandas as pd
 import torch
 
 
-def get_class_weights(csv_path='dataset_index_split.csv'):
+def get_class_weights(csv_path='data/dataset_index_split.csv'):
     df = pd.read_csv(csv_path)
 
     #trainデータの集計（全クラスID 0-12 が必ず含まれるように補完）

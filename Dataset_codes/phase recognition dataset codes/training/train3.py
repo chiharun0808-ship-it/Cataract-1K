@@ -39,6 +39,11 @@ from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import f1_score, confusion_matrix
+
+import os as _os
+import sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 from dataset_index.prepare_dataset import SurgicalPhaseDataset
 from models.cnn_rnn_hybrids import create_cnn_rnn_model, CNN_RNN_MODELS
 from models.timesformer import create_timesformer_model, TIMESFORMER_MODELS
@@ -75,7 +80,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 # build_sliding_window_index.py の出力。train2.pyのdataset_index_split.csvとは
 # 別ファイル（クリップの実体が別物のため）だが、case_id単位のsplit/foldの割り当ては
 # dataset_index_split.csv と共通（build_sliding_window_index.pyがそこから引き継いでいる）。
-csv_path = "dataset_index_sliding_window_stride5.csv"
+csv_path = "data/dataset_index_sliding_window_stride5.csv"
 batch_size = 4
 sequence_length = 30
 # build_sliding_window_index.py が書き出すクリップは既にサンプリング済みの30枚なので、

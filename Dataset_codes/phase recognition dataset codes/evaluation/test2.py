@@ -26,6 +26,10 @@ import torch
 from sklearn.metrics import confusion_matrix, f1_score
 from torch.utils.data import DataLoader
 
+import os as _os
+import sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+
 from dataset_index.prepare_dataset import SurgicalPhaseDataset
 from models.cnn_rnn_hybrids import create_cnn_rnn_model, CNN_RNN_MODELS
 from models.timesformer import create_timesformer_model, TIMESFORMER_MODELS
@@ -45,7 +49,7 @@ phases_12 = [
 
 # config.json が見つからない場合のみ使うフォールバック設定
 DEFAULT_INCLUDE_IDLE_PHASE = True
-DEFAULT_CSV_PATH = "dataset_index_split.csv"
+DEFAULT_CSV_PATH = "data/dataset_index_split.csv"
 DEFAULT_BATCH_SIZE = 4
 DEFAULT_MODEL_NAME = "resnet50_lstm"
 # train2.py の SurgicalPhaseDataset のデフォルトと同じ値。TimeSformerはnum_framesが
