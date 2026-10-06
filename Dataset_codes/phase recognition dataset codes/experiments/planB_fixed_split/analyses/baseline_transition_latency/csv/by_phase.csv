@@ -1,0 +1,14 @@
+new_phase,train_median_segment_sec,n_boundaries_test,K1_not_evaluable,K1_caught_pct_of_evaluable,K1_median_latency_sec,K2_not_evaluable,K2_caught_pct_of_evaluable,K2_median_latency_sec,K3_not_evaluable,K3_caught_pct_of_evaluable,K3_median_latency_sec,K5_not_evaluable,K5_caught_pct_of_evaluable,K5_median_latency_sec
+Incision,3.8,21,0,100.0,0.7,0,100.0,0.75,0,81.0,0.7,15,66.7,0.5
+Viscoelastic,5.41,22,0,86.4,0.88,0,81.8,0.83,0,77.3,0.78,7,66.7,0.75
+Capsulorhexis,29.58,11,0,100.0,0.8,0,100.0,0.8,0,100.0,0.8,0,100.0,0.81
+Hydrodissection,18.37,12,0,100.0,0.97,0,100.0,1.16,0,91.7,1.13,0,91.7,1.13
+Phacoemulsification,91.1,11,0,100.0,0.58,0,100.0,0.58,0,100.0,0.58,0,100.0,0.58
+Irrigation_Aspiration,42.04,11,0,100.0,0.7,0,100.0,0.7,0,100.0,0.7,0,100.0,0.7
+CapsulePulishing,7.69,17,0,100.0,0.9,0,100.0,0.9,0,100.0,0.9,1,87.5,0.89
+LensImplantation,10.8,11,0,100.0,0.75,0,100.0,0.75,0,100.0,1.03,0,100.0,1.03
+LensPositioning,7.72,11,0,90.9,0.89,0,81.8,0.85,0,81.8,0.85,2,55.6,0.93
+Viscoelastic_Suction,11.7,23,0,100.0,0.38,0,100.0,0.38,0,100.0,0.38,0,100.0,0.38
+Anterior_ChamberFlushing,13.56,10,0,100.0,1.59,0,100.0,1.64,0,100.0,2.16,0,90.0,1.68
+Tonifying_Antibiotics,7.1,20,0,100.0,1.12,0,95.0,1.1,1,84.2,1.05,6,100.0,1.12
+idle,2.68,180,5,96.6,0.56,22,91.1,0.5,82,87.8,0.47,158,72.7,0.65
