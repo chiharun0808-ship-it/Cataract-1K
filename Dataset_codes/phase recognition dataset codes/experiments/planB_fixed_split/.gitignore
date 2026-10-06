@@ -1,0 +1,3 @@
+# 大きな生成物は git の管理対象外にする（コード・小さな CSV・記録は管理する）
+frames/
+runs/*/checkpoints/

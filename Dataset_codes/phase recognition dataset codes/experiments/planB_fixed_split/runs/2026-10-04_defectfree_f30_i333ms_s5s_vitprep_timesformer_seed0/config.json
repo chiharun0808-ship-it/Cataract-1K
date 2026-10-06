@@ -1,0 +1,31 @@
+{
+  "condition_tag": "defectfree_f30_i333ms_s5s_vitprep",
+  "started_at": "2026-10-04T09:22:01",
+  "git_head": "b7c5bbf16f53a5edbea912303f5402249fdded24",
+  "device": "cuda",
+  "torch": "2.2.0",
+  "n_train_windows": 2700,
+  "n_val_windows": 810,
+  "class_weights": [
+    3.296703,
+    2.662722,
+    0.961538,
+    1.228949,
+    0.26938,
+    0.667821,
+    2.472528,
+    2.257525,
+    3.099885,
+    1.023115,
+    2.282333,
+    1.483516,
+    0.500463
+  ],
+  "num_epochs": 50,
+  "patience": 10,
+  "learning_rate": 1e-05,
+  "grad_accum_steps": 8,
+  "grad_clip_max_norm": 1.0,
+  "seed": 0,
+  "smoke_steps": 0
+}

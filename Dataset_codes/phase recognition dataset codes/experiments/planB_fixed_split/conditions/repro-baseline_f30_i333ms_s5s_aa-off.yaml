@@ -1,0 +1,56 @@
+# 【採用せず 2026-10-05】ユーザーの決定で、前処理を事前学習の前提にそろえる案（②・切り出し a）に変更した。
+# 後継: conditions/defectfree_f30_i333ms_s5s_vitprep.yaml。この条件では学習していない。
+# 既存結果（現行モデル 91.4%）の再調査「専用」の条件。
+# 案B の本番の入力条件を決めたものではない（フレーム数・間隔・stride・antialias などは未決定のまま）。
+# 現行モデルと同じ入力条件・学習設定で、3つの不具合だけを直す（2026-10-04 ユーザー承認）。
+# 計画書: https://claude.ai/code/artifact/f01a79ec-637c-4125-93f3-1c939e4070ed
+tag: repro-baseline_f30_i333ms_s5s_aa-off
+purpose: reproduce_baseline_without_known_defects
+
+fixed_defects:
+  - "case_5353・case_5357 を train に追加（56症例: train 34 / val 11 / test 11）"
+  - "学習の画像を mp4v 再エンコード動画ではなく、元動画のフレーム（PNG・劣化なし）にする"
+  - "学習の縮小を推論と同じ関数にする（inference/visualize_phase_on_video.py の preprocess_frame、antialias なし）"
+
+data:
+  case_split_csv: data/case_split_56cases.csv
+  num_classes: 13              # idle を含む。Viscoelastic と AC Flushing は分ける
+  include_idle: true
+
+input:                          # 現行モデルと同じ
+  sequence_length: 30
+  frame_interval_sec: 0.3333333 # gt_utils.native_frame_interval(fps) = round(fps*10/30) フレーム
+  window_span_sec: 9.67
+  label_position: last_frame    # 窓の末尾フレームの時刻の正解
+  pad_start: repeat_oldest      # 動画冒頭は一番古いフレームを繰り返す
+  train_window_stride_sec: 5.0  # stride_frames = round(fps*5.0)
+  resize: [224, 224]
+  resize_method: torch.nn.functional.interpolate(bilinear, align_corners=False, antialias なし)
+  keep_aspect_ratio: false
+  normalize: divide_by_255_only
+  frame_source: original_video_png
+
+training:                       # 現行モデル（コミット 793d182 の train3.py）と同じ。進め方だけ変更
+  model: timesformer
+  pretrained: torchvision vit_b_16 DEFAULT（空間方向のみ）
+  dropout: 0.1
+  attn_dropout: 0.0
+  optimizer: Adam
+  learning_rate: 1.0e-5
+  weight_decay: 0.0
+  batch_size: 1
+  grad_accum_steps: 8
+  grad_clip_max_norm: 1.0
+  loss: CrossEntropyLoss(weight=class_weights)   # 重み = 総数 / (クラス数 × クラスごとの train 窓の数)
+  label_smoothing: 0.0
+  augmentation: none
+  num_epochs: 50                # 2026-10-04 ユーザー決定：再開なしで 1 回で通す（現行は 15+35）
+  early_stopping_patience: 10   # 2026-10-04 ユーザー承認
+  model_selection: val の窓単位 macro F1 が最良のエポック
+  seed: 0                       # 現行モデルは seed なし（避けられない違い）
+
+evaluation:                     # 91.4% と同じ
+  cases: test 11症例
+  stride_sec: 1.0
+  smooth_window: 1
+  script: attention_analysis/scripts/streaming_attention_eval.py --no-attention

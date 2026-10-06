@@ -1,0 +1,56 @@
+# 現行モデル（91.4%）の再調査：不具合を直し、前処理を事前学習の前提にそろえた条件（計画の ②・切り出し a）
+# 2026-10-05 ユーザー決定。案B の本番の入力条件（フレーム数・間隔・stride など）を決めたものではない。
+# 計画書: https://claude.ai/code/artifact/f01a79ec-637c-4125-93f3-1c939e4070ed
+tag: defectfree_f30_i333ms_s5s_vitprep
+supersedes: repro-baseline_f30_i333ms_s5s_aa-off   # 不具合の修正だけの案（①）。学習には使っていない
+
+changes_from_baseline:           # 現行モデル（91.4%）から変えること
+  - "case_5353・case_5357 を train に追加（56症例: train 34 / val 11 / test 11）"
+  - "学習の画像を mp4v 再エンコード動画ではなく、元動画のフレーム（PNG・劣化なし）にする"
+  - "前処理を学習・推論とも事前学習の前提にそろえる（下の input.preprocess）"
+  - "学習を 15+35 エポック（再開あり）から 50 エポック一括にする"
+  - "乱数の seed を固定する"
+
+data:
+  case_split_csv: data/case_split_56cases.csv
+  window_csv: data/windows_repro-baseline_f30_i333ms_s5s.csv   # 窓の決め方は現行モデルと同じ（前処理には依存しない）
+  frames: frames/repro-baseline/                               # 元動画のフレームそのもの（前処理には依存しない）
+  num_classes: 13              # idle を含む。Viscoelastic と AC Flushing は分ける（現行と同じ）
+
+input:                          # フレームの選び方は現行モデルと同じ
+  sequence_length: 30
+  frame_interval_sec: 0.3333333 # gt_utils.native_frame_interval(fps) = round(fps*10/30) フレーム
+  window_span_sec: 9.67
+  label_position: last_frame
+  pad_start: repeat_oldest
+  train_window_stride_sec: 5.0
+  preprocess:                   # 学習（lib/window_dataset.py）と推論（lib/streaming.py）で同じ関数 lib/preprocess.py
+    implementation: torchvision.models.ViT_B_16_Weights.DEFAULT.transforms()
+    resize_short_side: 256      # bilinear, antialias あり   512×384 → 341×256
+    center_crop: 224            # 左右それぞれ約17%、上下それぞれ約6%が切れる（analyses/center_crop_check で影響を確認）
+    normalize_mean: [0.485, 0.456, 0.406]
+    normalize_std: [0.229, 0.224, 0.225]
+
+training:                       # 現行モデル（コミット 793d182 の train3.py）と同じ。進め方と seed だけ変更
+  model: timesformer
+  pretrained: torchvision vit_b_16 DEFAULT（空間方向のみ）
+  dropout: 0.1
+  attn_dropout: 0.0
+  optimizer: Adam
+  learning_rate: 1.0e-5
+  weight_decay: 0.0
+  batch_size: 1
+  grad_accum_steps: 8
+  grad_clip_max_norm: 1.0
+  loss: CrossEntropyLoss(weight=class_weights)   # 重み = 総数 / (クラス数 × クラスごとの train 窓の数)
+  label_smoothing: 0.0
+  augmentation: none
+  num_epochs: 50
+  early_stopping_patience: 10
+  model_selection: val の窓単位 macro F1 が最良のエポック
+  seed: 0
+
+evaluation:                     # 91.4% と同じ手順。前処理だけ上の preprocess（lib/streaming.py を使う案B 専用の評価）
+  cases: test 11症例
+  stride_sec: 1.0
+  smooth_window: 1

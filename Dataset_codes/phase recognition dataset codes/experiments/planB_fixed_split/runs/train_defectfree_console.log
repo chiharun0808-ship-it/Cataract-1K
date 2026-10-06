@@ -1,0 +1,399 @@
+[train] 2700 窓
+[val] 810 窓
+{
+  "condition_tag": "defectfree_f30_i333ms_s5s_vitprep",
+  "started_at": "2026-10-04T09:22:01",
+  "git_head": "b7c5bbf16f53a5edbea912303f5402249fdded24",
+  "device": "cuda",
+  "torch": "2.2.0",
+  "n_train_windows": 2700,
+  "n_val_windows": 810,
+  "class_weights": [
+    3.296703,
+    2.662722,
+    0.961538,
+    1.228949,
+    0.26938,
+    0.667821,
+    2.472528,
+    2.257525,
+    3.099885,
+    1.023115,
+    2.282333,
+    1.483516,
+    0.500463
+  ],
+  "num_epochs": 50,
+  "patience": 10,
+  "learning_rate": 1e-05,
+  "grad_accum_steps": 8,
+  "grad_clip_max_norm": 1.0,
+  "seed": 0,
+  "smoke_steps": 0
+}
+  epoch 1 batch 200/2700
+  epoch 1 batch 400/2700
+  epoch 1 batch 600/2700
+  epoch 1 batch 800/2700
+  epoch 1 batch 1000/2700
+  epoch 1 batch 1200/2700
+  epoch 1 batch 1400/2700
+  epoch 1 batch 1600/2700
+  epoch 1 batch 1800/2700
+  epoch 1 batch 2000/2700
+  epoch 1 batch 2200/2700
+  epoch 1 batch 2400/2700
+  epoch 1 batch 2600/2700
+Epoch 1/50 | Loss 1.2932 | Train F1 0.3446 | Val F1 0.4368 | val の予測クラス数 12
+  epoch 2 batch 200/2700
+  epoch 2 batch 400/2700
+  epoch 2 batch 600/2700
+  epoch 2 batch 800/2700
+  epoch 2 batch 1000/2700
+  epoch 2 batch 1200/2700
+  epoch 2 batch 1400/2700
+  epoch 2 batch 1600/2700
+  epoch 2 batch 1800/2700
+  epoch 2 batch 2000/2700
+  epoch 2 batch 2200/2700
+  epoch 2 batch 2400/2700
+  epoch 2 batch 2600/2700
+Epoch 2/50 | Loss 0.7483 | Train F1 0.5636 | Val F1 0.6076 | val の予測クラス数 13
+  epoch 3 batch 200/2700
+  epoch 3 batch 400/2700
+  epoch 3 batch 600/2700
+  epoch 3 batch 800/2700
+  epoch 3 batch 1000/2700
+  epoch 3 batch 1200/2700
+  epoch 3 batch 1400/2700
+  epoch 3 batch 1600/2700
+  epoch 3 batch 1800/2700
+  epoch 3 batch 2000/2700
+  epoch 3 batch 2200/2700
+  epoch 3 batch 2400/2700
+  epoch 3 batch 2600/2700
+Epoch 3/50 | Loss 0.6167 | Train F1 0.6456 | Val F1 0.4680 | val の予測クラス数 11
+  epoch 4 batch 200/2700
+  epoch 4 batch 400/2700
+  epoch 4 batch 600/2700
+  epoch 4 batch 800/2700
+  epoch 4 batch 1000/2700
+  epoch 4 batch 1200/2700
+  epoch 4 batch 1400/2700
+  epoch 4 batch 1600/2700
+  epoch 4 batch 1800/2700
+  epoch 4 batch 2000/2700
+  epoch 4 batch 2200/2700
+  epoch 4 batch 2400/2700
+  epoch 4 batch 2600/2700
+Epoch 4/50 | Loss 0.5406 | Train F1 0.6859 | Val F1 0.6513 | val の予測クラス数 13
+  epoch 5 batch 200/2700
+  epoch 5 batch 400/2700
+  epoch 5 batch 600/2700
+  epoch 5 batch 800/2700
+  epoch 5 batch 1000/2700
+  epoch 5 batch 1200/2700
+  epoch 5 batch 1400/2700
+  epoch 5 batch 1600/2700
+  epoch 5 batch 1800/2700
+  epoch 5 batch 2000/2700
+  epoch 5 batch 2200/2700
+  epoch 5 batch 2400/2700
+  epoch 5 batch 2600/2700
+Epoch 5/50 | Loss 0.4595 | Train F1 0.7399 | Val F1 0.6665 | val の予測クラス数 13
+  epoch 6 batch 200/2700
+  epoch 6 batch 400/2700
+  epoch 6 batch 600/2700
+  epoch 6 batch 800/2700
+  epoch 6 batch 1000/2700
+  epoch 6 batch 1200/2700
+  epoch 6 batch 1400/2700
+  epoch 6 batch 1600/2700
+  epoch 6 batch 1800/2700
+  epoch 6 batch 2000/2700
+  epoch 6 batch 2200/2700
+  epoch 6 batch 2400/2700
+  epoch 6 batch 2600/2700
+Epoch 6/50 | Loss 0.4137 | Train F1 0.7612 | Val F1 0.7043 | val の予測クラス数 13
+  epoch 7 batch 200/2700
+  epoch 7 batch 400/2700
+  epoch 7 batch 600/2700
+  epoch 7 batch 800/2700
+  epoch 7 batch 1000/2700
+  epoch 7 batch 1200/2700
+  epoch 7 batch 1400/2700
+  epoch 7 batch 1600/2700
+  epoch 7 batch 1800/2700
+  epoch 7 batch 2000/2700
+  epoch 7 batch 2200/2700
+  epoch 7 batch 2400/2700
+  epoch 7 batch 2600/2700
+Epoch 7/50 | Loss 0.3601 | Train F1 0.7986 | Val F1 0.6584 | val の予測クラス数 13
+  epoch 8 batch 200/2700
+  epoch 8 batch 400/2700
+  epoch 8 batch 600/2700
+  epoch 8 batch 800/2700
+  epoch 8 batch 1000/2700
+  epoch 8 batch 1200/2700
+  epoch 8 batch 1400/2700
+  epoch 8 batch 1600/2700
+  epoch 8 batch 1800/2700
+  epoch 8 batch 2000/2700
+  epoch 8 batch 2200/2700
+  epoch 8 batch 2400/2700
+  epoch 8 batch 2600/2700
+Epoch 8/50 | Loss 0.3259 | Train F1 0.8204 | Val F1 0.6918 | val の予測クラス数 13
+  epoch 9 batch 200/2700
+  epoch 9 batch 400/2700
+  epoch 9 batch 600/2700
+  epoch 9 batch 800/2700
+  epoch 9 batch 1000/2700
+  epoch 9 batch 1200/2700
+  epoch 9 batch 1400/2700
+  epoch 9 batch 1600/2700
+  epoch 9 batch 1800/2700
+  epoch 9 batch 2000/2700
+  epoch 9 batch 2200/2700
+  epoch 9 batch 2400/2700
+  epoch 9 batch 2600/2700
+Epoch 9/50 | Loss 0.2872 | Train F1 0.8374 | Val F1 0.7165 | val の予測クラス数 13
+  epoch 10 batch 200/2700
+  epoch 10 batch 400/2700
+  epoch 10 batch 600/2700
+  epoch 10 batch 800/2700
+  epoch 10 batch 1000/2700
+  epoch 10 batch 1200/2700
+  epoch 10 batch 1400/2700
+  epoch 10 batch 1600/2700
+  epoch 10 batch 1800/2700
+  epoch 10 batch 2000/2700
+  epoch 10 batch 2200/2700
+  epoch 10 batch 2400/2700
+  epoch 10 batch 2600/2700
+Epoch 10/50 | Loss 0.2642 | Train F1 0.8540 | Val F1 0.7114 | val の予測クラス数 13
+  epoch 11 batch 200/2700
+  epoch 11 batch 400/2700
+  epoch 11 batch 600/2700
+  epoch 11 batch 800/2700
+  epoch 11 batch 1000/2700
+  epoch 11 batch 1200/2700
+  epoch 11 batch 1400/2700
+  epoch 11 batch 1600/2700
+  epoch 11 batch 1800/2700
+  epoch 11 batch 2000/2700
+  epoch 11 batch 2200/2700
+  epoch 11 batch 2400/2700
+  epoch 11 batch 2600/2700
+Epoch 11/50 | Loss 0.2262 | Train F1 0.8709 | Val F1 0.7114 | val の予測クラス数 13
+  epoch 12 batch 200/2700
+  epoch 12 batch 400/2700
+  epoch 12 batch 600/2700
+  epoch 12 batch 800/2700
+  epoch 12 batch 1000/2700
+  epoch 12 batch 1200/2700
+  epoch 12 batch 1400/2700
+  epoch 12 batch 1600/2700
+  epoch 12 batch 1800/2700
+  epoch 12 batch 2000/2700
+  epoch 12 batch 2200/2700
+  epoch 12 batch 2400/2700
+  epoch 12 batch 2600/2700
+Epoch 12/50 | Loss 0.1885 | Train F1 0.8842 | Val F1 0.7235 | val の予測クラス数 13
+  epoch 13 batch 200/2700
+  epoch 13 batch 400/2700
+  epoch 13 batch 600/2700
+  epoch 13 batch 800/2700
+  epoch 13 batch 1000/2700
+  epoch 13 batch 1200/2700
+  epoch 13 batch 1400/2700
+  epoch 13 batch 1600/2700
+  epoch 13 batch 1800/2700
+  epoch 13 batch 2000/2700
+  epoch 13 batch 2200/2700
+  epoch 13 batch 2400/2700
+  epoch 13 batch 2600/2700
+Epoch 13/50 | Loss 0.1741 | Train F1 0.9038 | Val F1 0.7406 | val の予測クラス数 13
+  epoch 14 batch 200/2700
+  epoch 14 batch 400/2700
+  epoch 14 batch 600/2700
+  epoch 14 batch 800/2700
+  epoch 14 batch 1000/2700
+  epoch 14 batch 1200/2700
+  epoch 14 batch 1400/2700
+  epoch 14 batch 1600/2700
+  epoch 14 batch 1800/2700
+  epoch 14 batch 2000/2700
+  epoch 14 batch 2200/2700
+  epoch 14 batch 2400/2700
+  epoch 14 batch 2600/2700
+Epoch 14/50 | Loss 0.1618 | Train F1 0.9069 | Val F1 0.7275 | val の予測クラス数 13
+  epoch 15 batch 200/2700
+  epoch 15 batch 400/2700
+  epoch 15 batch 600/2700
+  epoch 15 batch 800/2700
+  epoch 15 batch 1000/2700
+  epoch 15 batch 1200/2700
+  epoch 15 batch 1400/2700
+  epoch 15 batch 1600/2700
+  epoch 15 batch 1800/2700
+  epoch 15 batch 2000/2700
+  epoch 15 batch 2200/2700
+  epoch 15 batch 2400/2700
+  epoch 15 batch 2600/2700
+Epoch 15/50 | Loss 0.1454 | Train F1 0.9139 | Val F1 0.7106 | val の予測クラス数 13
+  epoch 16 batch 200/2700
+  epoch 16 batch 400/2700
+  epoch 16 batch 600/2700
+  epoch 16 batch 800/2700
+  epoch 16 batch 1000/2700
+  epoch 16 batch 1200/2700
+  epoch 16 batch 1400/2700
+  epoch 16 batch 1600/2700
+  epoch 16 batch 1800/2700
+  epoch 16 batch 2000/2700
+  epoch 16 batch 2200/2700
+  epoch 16 batch 2400/2700
+  epoch 16 batch 2600/2700
+Epoch 16/50 | Loss 0.1469 | Train F1 0.9250 | Val F1 0.7594 | val の予測クラス数 13
+  epoch 17 batch 200/2700
+  epoch 17 batch 400/2700
+  epoch 17 batch 600/2700
+  epoch 17 batch 800/2700
+  epoch 17 batch 1000/2700
+  epoch 17 batch 1200/2700
+  epoch 17 batch 1400/2700
+  epoch 17 batch 1600/2700
+  epoch 17 batch 1800/2700
+  epoch 17 batch 2000/2700
+  epoch 17 batch 2200/2700
+  epoch 17 batch 2400/2700
+  epoch 17 batch 2600/2700
+Epoch 17/50 | Loss 0.1136 | Train F1 0.9338 | Val F1 0.7327 | val の予測クラス数 13
+  epoch 18 batch 200/2700
+  epoch 18 batch 400/2700
+  epoch 18 batch 600/2700
+  epoch 18 batch 800/2700
+  epoch 18 batch 1000/2700
+  epoch 18 batch 1200/2700
+  epoch 18 batch 1400/2700
+  epoch 18 batch 1600/2700
+  epoch 18 batch 1800/2700
+  epoch 18 batch 2000/2700
+  epoch 18 batch 2200/2700
+  epoch 18 batch 2400/2700
+  epoch 18 batch 2600/2700
+Epoch 18/50 | Loss 0.1070 | Train F1 0.9348 | Val F1 0.7399 | val の予測クラス数 13
+  epoch 19 batch 200/2700
+  epoch 19 batch 400/2700
+  epoch 19 batch 600/2700
+  epoch 19 batch 800/2700
+  epoch 19 batch 1000/2700
+  epoch 19 batch 1200/2700
+  epoch 19 batch 1400/2700
+  epoch 19 batch 1600/2700
+  epoch 19 batch 1800/2700
+  epoch 19 batch 2000/2700
+  epoch 19 batch 2200/2700
+  epoch 19 batch 2400/2700
+  epoch 19 batch 2600/2700
+Epoch 19/50 | Loss 0.0951 | Train F1 0.9514 | Val F1 0.7283 | val の予測クラス数 13
+  epoch 20 batch 200/2700
+  epoch 20 batch 400/2700
+  epoch 20 batch 600/2700
+  epoch 20 batch 800/2700
+  epoch 20 batch 1000/2700
+  epoch 20 batch 1200/2700
+  epoch 20 batch 1400/2700
+  epoch 20 batch 1600/2700
+  epoch 20 batch 1800/2700
+  epoch 20 batch 2000/2700
+  epoch 20 batch 2200/2700
+  epoch 20 batch 2400/2700
+  epoch 20 batch 2600/2700
+Epoch 20/50 | Loss 0.0866 | Train F1 0.9608 | Val F1 0.7298 | val の予測クラス数 13
+  epoch 21 batch 200/2700
+  epoch 21 batch 400/2700
+  epoch 21 batch 600/2700
+  epoch 21 batch 800/2700
+  epoch 21 batch 1000/2700
+  epoch 21 batch 1200/2700
+  epoch 21 batch 1400/2700
+  epoch 21 batch 1600/2700
+  epoch 21 batch 1800/2700
+  epoch 21 batch 2000/2700
+  epoch 21 batch 2200/2700
+  epoch 21 batch 2400/2700
+  epoch 21 batch 2600/2700
+Epoch 21/50 | Loss 0.0688 | Train F1 0.9636 | Val F1 0.7118 | val の予測クラス数 13
+  epoch 22 batch 200/2700
+  epoch 22 batch 400/2700
+  epoch 22 batch 600/2700
+  epoch 22 batch 800/2700
+  epoch 22 batch 1000/2700
+  epoch 22 batch 1200/2700
+  epoch 22 batch 1400/2700
+  epoch 22 batch 1600/2700
+  epoch 22 batch 1800/2700
+  epoch 22 batch 2000/2700
+  epoch 22 batch 2200/2700
+  epoch 22 batch 2400/2700
+  epoch 22 batch 2600/2700
+Epoch 22/50 | Loss 0.0651 | Train F1 0.9682 | Val F1 0.7208 | val の予測クラス数 13
+  epoch 23 batch 200/2700
+  epoch 23 batch 400/2700
+  epoch 23 batch 600/2700
+  epoch 23 batch 800/2700
+  epoch 23 batch 1000/2700
+  epoch 23 batch 1200/2700
+  epoch 23 batch 1400/2700
+  epoch 23 batch 1600/2700
+  epoch 23 batch 1800/2700
+  epoch 23 batch 2000/2700
+  epoch 23 batch 2200/2700
+  epoch 23 batch 2400/2700
+  epoch 23 batch 2600/2700
+Epoch 23/50 | Loss 0.0575 | Train F1 0.9699 | Val F1 0.7257 | val の予測クラス数 13
+  epoch 24 batch 200/2700
+  epoch 24 batch 400/2700
+  epoch 24 batch 600/2700
+  epoch 24 batch 800/2700
+  epoch 24 batch 1000/2700
+  epoch 24 batch 1200/2700
+  epoch 24 batch 1400/2700
+  epoch 24 batch 1600/2700
+  epoch 24 batch 1800/2700
+  epoch 24 batch 2000/2700
+  epoch 24 batch 2200/2700
+  epoch 24 batch 2400/2700
+  epoch 24 batch 2600/2700
+Epoch 24/50 | Loss 0.0701 | Train F1 0.9678 | Val F1 0.7343 | val の予測クラス数 13
+  epoch 25 batch 200/2700
+  epoch 25 batch 400/2700
+  epoch 25 batch 600/2700
+  epoch 25 batch 800/2700
+  epoch 25 batch 1000/2700
+  epoch 25 batch 1200/2700
+  epoch 25 batch 1400/2700
+  epoch 25 batch 1600/2700
+  epoch 25 batch 1800/2700
+  epoch 25 batch 2000/2700
+  epoch 25 batch 2200/2700
+  epoch 25 batch 2400/2700
+  epoch 25 batch 2600/2700
+Epoch 25/50 | Loss 0.0541 | Train F1 0.9775 | Val F1 0.6973 | val の予測クラス数 13
+  epoch 26 batch 200/2700
+  epoch 26 batch 400/2700
+  epoch 26 batch 600/2700
+  epoch 26 batch 800/2700
+  epoch 26 batch 1000/2700
+  epoch 26 batch 1200/2700
+  epoch 26 batch 1400/2700
+  epoch 26 batch 1600/2700
+  epoch 26 batch 1800/2700
+  epoch 26 batch 2000/2700
+  epoch 26 batch 2200/2700
+  epoch 26 batch 2400/2700
+  epoch 26 batch 2600/2700
+Epoch 26/50 | Loss 0.0493 | Train F1 0.9776 | Val F1 0.7304 | val の予測クラス数 13
+Early stopping
+完了: {'best_val_f1': 0.7594479785160164, 'best_epoch': 16, 'epochs_run': 26, 'finished_at': '2026-10-05T04:17:40'}

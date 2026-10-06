@@ -1,0 +1,31 @@
+  case_id  n_steps  baseline_acc  defectfree_acc   diff
+case_4697      242         88.43           79.34  -9.09
+case_4709      497         95.37           84.10 -11.27
+case_4811      415         87.95           78.80  -9.16
+case_4852      585         94.87           88.38  -6.50
+case_4874      318         84.59           84.28  -0.31
+case_4924      570         88.60           87.89  -0.70
+case_5015      335         92.54           80.90 -11.64
+case_5063      371         87.87           80.05  -7.82
+case_5300      308         92.86           78.57 -14.29
+case_5315      370         94.32           75.68 -18.65
+case_5331      376         94.41           84.84  -9.57
+{
+  "baseline_91.4": {
+    "accuracy": 91.36,
+    "n_steps": 4387,
+    "macro_f1_video": 0.8666,
+    "pred_switches": 517,
+    "true_switches": 352
+  },
+  "defectfree": {
+    "accuracy": 82.79,
+    "n_steps": 4387,
+    "macro_f1_video": 0.7602,
+    "pred_switches": 327,
+    "true_switches": 352
+  },
+  "cases_improved": 0,
+  "cases_worse": 11,
+  "mean_case_diff": -9.0
+}

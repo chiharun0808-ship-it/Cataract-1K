@@ -1,0 +1,18 @@
+実行: C:\Users\kit02\anaconda3\envs\cataract_env\python.exe C:\Users\kit02\GitHub\Cataract-1K\Dataset_codes\phase recognition dataset codes\attention_analysis\scripts\streaming_attention_eval.py result\epochs_35\sliding_window_checkpoints_0914_10_46 --no-attention --stride-sec 1.0 --smooth-window 1 --cases case_4697 case_4709 case_4811 case_4852 case_4874 case_4924 case_5015 case_5063 case_5300 case_5315 case_5331 --output-dir C:\Users\kit02\GitHub\Cataract-1K\.claude\worktrees\planB-baseline-reproduce\Dataset_codes\phase recognition dataset codes\experiments\planB_fixed_split\runs\2026-10-04_baseline-reproduce_current-checkpoint\streaming_eval
+（作業ディレクトリ: C:\Users\kit02\GitHub\Cataract-1K\Dataset_codes\phase recognition dataset codes。既存のファイルは書き換えない）
+  case_id  steps_saved  steps_rerun  acc_saved  acc_rerun  n_mismatch
+case_4697          242          242      88.43      88.43           0
+case_4709          497          497      95.37      95.37           0
+case_4811          415          415      87.95      87.95           0
+case_4852          585          585      94.87      94.87           0
+case_4874          318          318      84.59      84.59           0
+case_4924          570          570      88.60      88.60           0
+case_5015          335          335      92.54      92.54           0
+case_5063          371          371      87.87      87.87           0
+case_5300          308          308      92.86      92.86           0
+case_5315          370          370      94.32      94.32           0
+case_5331          376          376      94.41      94.41           0
+
+全体の一致率: 再実行 91.36% （4008/4387）
+[OK] 全時点で保存済みの予測ログと完全に一致しました。
+exit=0

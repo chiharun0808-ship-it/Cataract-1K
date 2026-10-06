@@ -1,0 +1,23 @@
+{
+  "n_new_idle_confusion": 418,
+  "n_control": 418,
+  "median_err": 0.004419268750538708,
+  "median_control": 0.0030584604386270095,
+  "share_over_5pct_err": 0.0861244019138756,
+  "share_over_5pct_control": 0.08133971291866028,
+  "mannwhitney_p_err_greater": 0.02671657427794999,
+  "by_case_counts": {
+    "case_4697": 23,
+    "case_4709": 59,
+    "case_4811": 32,
+    "case_4852": 33,
+    "case_4874": 30,
+    "case_4924": 43,
+    "case_5015": 29,
+    "case_5063": 30,
+    "case_5300": 45,
+    "case_5315": 54,
+    "case_5331": 40
+  },
+  "note": "時点は1秒ごとで隣どうしが似ているため、p値は独立性の仮定を満たさず参考値"
+}

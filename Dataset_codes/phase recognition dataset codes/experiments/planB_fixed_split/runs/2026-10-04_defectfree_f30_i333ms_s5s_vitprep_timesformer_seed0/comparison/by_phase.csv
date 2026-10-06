@@ -1,0 +1,14 @@
+,baseline_91.4_recall,baseline_91.4_f1,defectfree_recall,defectfree_f1
+Incision,0.8817,0.8817,0.5699,0.5792
+Viscoelastic,0.7132,0.736,0.4806,0.4477
+Capsulorhexis,0.9736,0.9609,0.8548,0.9088
+Hydrodissection,0.8937,0.9113,0.9855,0.8718
+Phacoemulsification,0.9681,0.9793,0.9877,0.9853
+Irrigation_Aspiration,0.9753,0.9479,0.9485,0.9553
+CapsulePulishing,0.8195,0.8256,0.6244,0.6827
+LensImplantation,0.92,0.9096,0.9257,0.8482
+LensPositioning,0.529,0.656,0.6774,0.7473
+Viscoelastic_Suction,0.9806,0.9766,0.7729,0.848
+Anterior_ChamberFlushing,0.8593,0.7412,0.6889,0.6
+Tonifying_Antibiotics,0.8357,0.8496,0.9296,0.7826
+idle,0.9078,0.8901,0.6,0.6253

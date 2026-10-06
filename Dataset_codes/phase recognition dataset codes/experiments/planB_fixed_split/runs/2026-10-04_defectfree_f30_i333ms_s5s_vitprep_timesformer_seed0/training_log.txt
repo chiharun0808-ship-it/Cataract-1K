@@ -1,0 +1,36 @@
+Epoch 1/50 | Loss 1.2932 | Train F1 0.3446 | Val F1 0.4368 | val の予測クラス数 12
+  [best 更新] epoch 1 val F1 0.4368
+Epoch 2/50 | Loss 0.7483 | Train F1 0.5636 | Val F1 0.6076 | val の予測クラス数 13
+  [best 更新] epoch 2 val F1 0.6076
+Epoch 3/50 | Loss 0.6167 | Train F1 0.6456 | Val F1 0.4680 | val の予測クラス数 11
+Epoch 4/50 | Loss 0.5406 | Train F1 0.6859 | Val F1 0.6513 | val の予測クラス数 13
+  [best 更新] epoch 4 val F1 0.6513
+Epoch 5/50 | Loss 0.4595 | Train F1 0.7399 | Val F1 0.6665 | val の予測クラス数 13
+  [best 更新] epoch 5 val F1 0.6665
+Epoch 6/50 | Loss 0.4137 | Train F1 0.7612 | Val F1 0.7043 | val の予測クラス数 13
+  [best 更新] epoch 6 val F1 0.7043
+Epoch 7/50 | Loss 0.3601 | Train F1 0.7986 | Val F1 0.6584 | val の予測クラス数 13
+Epoch 8/50 | Loss 0.3259 | Train F1 0.8204 | Val F1 0.6918 | val の予測クラス数 13
+Epoch 9/50 | Loss 0.2872 | Train F1 0.8374 | Val F1 0.7165 | val の予測クラス数 13
+  [best 更新] epoch 9 val F1 0.7165
+Epoch 10/50 | Loss 0.2642 | Train F1 0.8540 | Val F1 0.7114 | val の予測クラス数 13
+Epoch 11/50 | Loss 0.2262 | Train F1 0.8709 | Val F1 0.7114 | val の予測クラス数 13
+Epoch 12/50 | Loss 0.1885 | Train F1 0.8842 | Val F1 0.7235 | val の予測クラス数 13
+  [best 更新] epoch 12 val F1 0.7235
+Epoch 13/50 | Loss 0.1741 | Train F1 0.9038 | Val F1 0.7406 | val の予測クラス数 13
+  [best 更新] epoch 13 val F1 0.7406
+Epoch 14/50 | Loss 0.1618 | Train F1 0.9069 | Val F1 0.7275 | val の予測クラス数 13
+Epoch 15/50 | Loss 0.1454 | Train F1 0.9139 | Val F1 0.7106 | val の予測クラス数 13
+Epoch 16/50 | Loss 0.1469 | Train F1 0.9250 | Val F1 0.7594 | val の予測クラス数 13
+  [best 更新] epoch 16 val F1 0.7594
+Epoch 17/50 | Loss 0.1136 | Train F1 0.9338 | Val F1 0.7327 | val の予測クラス数 13
+Epoch 18/50 | Loss 0.1070 | Train F1 0.9348 | Val F1 0.7399 | val の予測クラス数 13
+Epoch 19/50 | Loss 0.0951 | Train F1 0.9514 | Val F1 0.7283 | val の予測クラス数 13
+Epoch 20/50 | Loss 0.0866 | Train F1 0.9608 | Val F1 0.7298 | val の予測クラス数 13
+Epoch 21/50 | Loss 0.0688 | Train F1 0.9636 | Val F1 0.7118 | val の予測クラス数 13
+Epoch 22/50 | Loss 0.0651 | Train F1 0.9682 | Val F1 0.7208 | val の予測クラス数 13
+Epoch 23/50 | Loss 0.0575 | Train F1 0.9699 | Val F1 0.7257 | val の予測クラス数 13
+Epoch 24/50 | Loss 0.0701 | Train F1 0.9678 | Val F1 0.7343 | val の予測クラス数 13
+Epoch 25/50 | Loss 0.0541 | Train F1 0.9775 | Val F1 0.6973 | val の予測クラス数 13
+Epoch 26/50 | Loss 0.0493 | Train F1 0.9776 | Val F1 0.7304 | val の予測クラス数 13
+Early stopping: 10 エポック改善なし（epoch 26）

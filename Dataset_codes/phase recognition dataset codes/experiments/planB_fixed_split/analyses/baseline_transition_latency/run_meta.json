@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-10-04T00:21:35",
+  "script": "experiments/planB_fixed_split/analyses/baseline_transition_latency/measure_transition_latency.py",
+  "model_of_pred_logs": "result/epochs_35/sliding_window_checkpoints_0914_10_46/best_model.pth",
+  "pred_log_sha256": {
+    "case_4697.pred_log.csv": "36ed8c31144bf77920778e5a4790095057ba85550bdf65fb02e64aa78dc3e23b",
+    "case_4709.pred_log.csv": "c5bcba0bafb1a68793eb14c8c6e61d5765e0485b11fbc15803ab43a9eee6c7cd",
+    "case_4811.pred_log.csv": "53e170a917ee5ad0a36397a392b39218d0d7933c5b54f5d1fbe629232b2f3044",
+    "case_4852.pred_log.csv": "e8340292a43bc2a3a7df7a4a831c22da772d890a398400c887e061ff7108e49d",
+    "case_4874.pred_log.csv": "2676e3a1600a337d4b9bd795bba20d8ca333e99f0589508cb28d36beae6c1204",
+    "case_4924.pred_log.csv": "ab6951d40dbe268c62e541393ebc6c15167ce258f198c996cde345d7f606187e",
+    "case_5015.pred_log.csv": "6944419e312b6e6b78dae0e60caa2ab2a72aabe6da24574753148ce221a48715",
+    "case_5063.pred_log.csv": "fa6095cbb7ab947d4b9b6076c46635c3aef9acceed23561d40e67a6815a617a1",
+    "case_5300.pred_log.csv": "877bfdf1f0b9eaf06d159eee5f45072b96aea4872f623dc2180295103c22aafe",
+    "case_5315.pred_log.csv": "50150c3717f8168897fa83a790504f3745f0c375c33347ac53d511edea49d6a8",
+    "case_5331.pred_log.csv": "a4aab3d59972efd64dbdb9de319f1ac7750bf400a4ba599c697196b9b2a9275c"
+  },
+  "split_file": "experiments/planB_fixed_split/data/case_split_56cases.csv",
+  "test_cases": [
+    "case_4697",
+    "case_4709",
+    "case_4811",
+    "case_4852",
+    "case_4874",
+    "case_4924",
+    "case_5015",
+    "case_5063",
+    "case_5300",
+    "case_5315",
+    "case_5331"
+  ],
+  "n_train_cases_for_durations": 34,
+  "K_values_sec": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "bootstrap": {
+    "n": 2000,
+    "seed": 0
+  },
+  "n_boundaries": 360,
+  "n_steps_after_first_boundary": 4250
+}

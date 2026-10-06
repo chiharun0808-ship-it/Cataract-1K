@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-10-04T03:51:35",
+  "checkpoint": "C:\\Users\\kit02\\GitHub\\Cataract-1K\\Dataset_codes\\phase recognition dataset codes\\result\\epochs_35\\sliding_window_checkpoints_0914_10_46\\best_model.pth",
+  "command": [
+    "C:\\Users\\kit02\\anaconda3\\envs\\cataract_env\\python.exe",
+    "C:\\Users\\kit02\\GitHub\\Cataract-1K\\Dataset_codes\\phase recognition dataset codes\\attention_analysis\\scripts\\streaming_attention_eval.py",
+    "result\\epochs_35\\sliding_window_checkpoints_0914_10_46",
+    "--no-attention",
+    "--stride-sec",
+    "1.0",
+    "--smooth-window",
+    "1",
+    "--cases",
+    "case_4697",
+    "case_4709",
+    "case_4811",
+    "case_4852",
+    "case_4874",
+    "case_4924",
+    "case_5015",
+    "case_5063",
+    "case_5300",
+    "case_5315",
+    "case_5331",
+    "--output-dir",
+    "C:\\Users\\kit02\\GitHub\\Cataract-1K\\.claude\\worktrees\\planB-baseline-reproduce\\Dataset_codes\\phase recognition dataset codes\\experiments\\planB_fixed_split\\runs\\2026-10-04_baseline-reproduce_current-checkpoint\\streaming_eval"
+  ],
+  "cwd": "C:\\Users\\kit02\\GitHub\\Cataract-1K\\Dataset_codes\\phase recognition dataset codes",
+  "overall_accuracy_rerun": 91.3608,
+  "total_steps": 4387,
+  "reproduced_exactly": true,
+  "problems": []
+}

@@ -1,0 +1,92 @@
+{
+  "created_at": "2026-10-03T20:43:45",
+  "script": "experiments/planB_fixed_split/scripts/01_build_case_split.py",
+  "purpose": "案B: 既存の固定分割を保ったまま、抜けていた2症例を train に追加した56症例の分割",
+  "source_files": {
+    "data/dataset_index_split.csv": "f3c61a3e3a6279a1fedac2f3e72446d6ce938c9de1a7cae1b81a813971fd90c5",
+    "data/dataset_index_sliding_window_stride5.csv": "d14e1f25cce24d777b54a2f1a731f1f816cbf1ee4e209f6569e2c95557d3b070"
+  },
+  "added_cases": {
+    "case_5353": "train",
+    "case_5357": "train"
+  },
+  "added_reason": "前処理スクリプトのループ範囲のバグ（len(case_list)-4）で学習データから抜けていた症例。2026-10-02 の合意により、既存の分割を変えずに train に追加",
+  "counts": {
+    "train": 34,
+    "test": 11,
+    "val": 11
+  },
+  "cases_by_split": {
+    "train": [
+      "case_4687",
+      "case_4693",
+      "case_4695",
+      "case_4816",
+      "case_4859",
+      "case_4863",
+      "case_4864",
+      "case_4899",
+      "case_4923",
+      "case_4927",
+      "case_4999",
+      "case_5004",
+      "case_5006",
+      "case_5011",
+      "case_5014",
+      "case_5016",
+      "case_5017",
+      "case_5032",
+      "case_5051",
+      "case_5057",
+      "case_5104",
+      "case_5261",
+      "case_5301",
+      "case_5303",
+      "case_5304",
+      "case_5305",
+      "case_5309",
+      "case_5311",
+      "case_5316",
+      "case_5317",
+      "case_5334",
+      "case_5340",
+      "case_5353",
+      "case_5357"
+    ],
+    "val": [
+      "case_4750",
+      "case_4888",
+      "case_4906",
+      "case_4939",
+      "case_5013",
+      "case_5058",
+      "case_5072",
+      "case_5314",
+      "case_5319",
+      "case_5329",
+      "case_5335"
+    ],
+    "test": [
+      "case_4697",
+      "case_4709",
+      "case_4811",
+      "case_4852",
+      "case_4874",
+      "case_4924",
+      "case_5015",
+      "case_5063",
+      "case_5300",
+      "case_5315",
+      "case_5331"
+    ]
+  },
+  "not_used": "既存の fold 列（旧モデルの交差検証用）は案B では使わないため引き継いでいない",
+  "checks_passed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "created_at": "2026-10-04T03:30:56",
+  "condition_tag": "repro-baseline_f30_i333ms_s5s_aa-off",
+  "scope": "既存結果（91.4%）の再調査専用。案B の本番の入力条件ではない",
+  "n_windows_by_split": {
+    "train": 2700,
+    "test": 881,
+    "val": 810
+  },
+  "n_windows_by_label_train": {
+    "Phacoemulsification": 771,
+    "idle": 415,
+    "Irrigation_Aspiration": 311,
+    "Capsulorhexis": 216,
+    "Viscoelastic_Suction": 203,
+    "Hydrodissection": 169,
+    "Tonifying_Antibiotics": 140,
+    "LensImplantation": 92,
+    "Anterior_ChamberFlushing": 91,
+    "CapsulePulishing": 84,
+    "Viscoelastic": 78,
+    "LensPositioning": 67,
+    "Incision": 63
+  },
+  "n_unique_frames": 66387,
+  "videos": {
+    "case_4687": {
+      "fps": 59.94005994005994,
+      "n_frames": 17381,
+      "n_windows": 58
+    },
+    "case_4693": {
+      "fps": 59.94005994005994,
+      "n_frames": 15680,
+      "n_windows": 53
+    },
+    "case_4695": {
+      "fps": 60.0,
+      "n_frames": 20149,
+      "n_windows": 68
+    },
+    "case_4697": {
+      "fps": 60.0,
+      "n_frames": 14470,
+      "n_windows": 49
+    },
+    "case_4709": {
+      "fps": 60.0,
+      "n_frames": 29765,
+      "n_windows": 100
+    },
+    "case_4750": {
+      "fps": 60.0,
+      "n_frames": 20551,
+      "n_windows": 69
+    },
+    "case_4811": {
+      "fps": 59.94005994005994,
+      "n_frames": 24846,
+      "n_windows": 83
+    },
+    "case_4816": {
+      "fps": 60.0,
+      "n_frames": 20847,
+      "n_windows": 70
+    },
+    "case_4852": {
+      "fps": 59.94005994005994,
+      "n_frames": 35068,
+      "n_windows": 117
+    },
+    "case_4859": {
+      "fps": 60.0,
+      "n_frames": 36724,
+      "n_windows": 123
+    },
+    "case_4863": {
+      "fps": 60.21946911817466,
+      "n_frames": 26678,
+      "n_windows": 89
+    },
+    "case_4864": {
+      "fps": 60.0,
+      "n_frames": 33407,
+      "n_windows": 112
+    },
+    "case_4874": {
+      "fps": 60.0,
+      "n_frames": 19052,
+      "n_windows": 64
+    },
+    "case_4888": {
+      "fps": 59.94005994005994,
+      "n_frames": 17187,
+      "n_windows": 58
+    },
+    "case_4899": {
+      "fps": 60.0,
+      "n_frames": 27790,
+      "n_windows": 93
+    },
+    "case_4906": {
+      "fps": 60.0,
+      "n_frames": 23654,
+      "n_windows": 79
+    },
+    "case_4923": {
+      "fps": 60.0,
+      "n_frames": 37226,
+      "n_windows": 125
+    },
+    "case_4924": {
+      "fps": 60.0,
+      "n_frames": 34147,
+      "n_windows": 114
+    },
+    "case_4927": {
+      "fps": 59.94005994005994,
+      "n_frames": 39521,
+      "n_windows": 132
+    },
+    "case_4939": {
+      "fps": 60.0,
+      "n_frames": 18101,
+      "n_windows": 61
+    },
+    "case_4999": {
+      "fps": 59.94005994005994,
+      "n_frames": 21773,
+      "n_windows": 73
+    },
+    "case_5004": {
+      "fps": 60.0,
+      "n_frames": 21198,
+      "n_windows": 71
+    },
+    "case_5006": {
+      "fps": 60.0,
+      "n_frames": 21522,
+      "n_windows": 72
+    },
+    "case_5011": {
+      "fps": 59.94005994005994,
+      "n_frames": 21329,
+      "n_windows": 72
+    },
+    "case_5013": {
+      "fps": 59.94005994005994,
+      "n_frames": 20300,
+      "n_windows": 68
+    },
+    "case_5014": {
+      "fps": 60.0,
+      "n_frames": 23652,
+      "n_windows": 79
+    },
+    "case_5015": {
+      "fps": 60.0,
+      "n_frames": 20070,
+      "n_windows": 67
+    },
+    "case_5016": {
+      "fps": 60.0,
+      "n_frames": 21928,
+      "n_windows": 74
+    },
+    "case_5017": {
+      "fps": 60.0,
+      "n_frames": 20362,
+      "n_windows": 68
+    },
+    "case_5032": {
+      "fps": 60.0,
+      "n_frames": 18191,
+      "n_windows": 61
+    },
+    "case_5051": {
+      "fps": 59.94005994005994,
+      "n_frames": 17081,
+      "n_windows": 57
+    },
+    "case_5057": {
+      "fps": 60.0,
+      "n_frames": 21131,
+      "n_windows": 71
+    },
+    "case_5058": {
+      "fps": 60.0,
+      "n_frames": 23755,
+      "n_windows": 80
+    },
+    "case_5063": {
+      "fps": 60.0,
+      "n_frames": 22234,
+      "n_windows": 75
+    },
+    "case_5072": {
+      "fps": 59.94005994005994,
+      "n_frames": 19717,
+      "n_windows": 66
+    },
+    "case_5104": {
+      "fps": 60.0,
+      "n_frames": 57302,
+      "n_windows": 192
+    },
+    "case_5261": {
+      "fps": 60.0,
+      "n_frames": 22442,
+      "n_windows": 75
+    },
+    "case_5300": {
+      "fps": 60.0,
+      "n_frames": 18428,
+      "n_windows": 62
+    },
+    "case_5301": {
+      "fps": 59.94005994005994,
+      "n_frames": 15804,
+      "n_windows": 53
+    },
+    "case_5303": {
+      "fps": 59.94005994005994,
+      "n_frames": 15976,
+      "n_windows": 54
+    },
+    "case_5304": {
+      "fps": 60.0,
+      "n_frames": 15495,
+      "n_windows": 52
+    },
+    "case_5305": {
+      "fps": 59.94005994005994,
+      "n_frames": 21838,
+      "n_windows": 73
+    },
+    "case_5309": {
+      "fps": 59.94005994005994,
+      "n_frames": 20129,
+      "n_windows": 68
+    },
+    "case_5311": {
+      "fps": 60.0,
+      "n_frames": 23924,
+      "n_windows": 80
+    },
+    "case_5314": {
+      "fps": 60.0,
+      "n_frames": 20478,
+      "n_windows": 69
+    },
+    "case_5315": {
+      "fps": 59.94005994005994,
+      "n_frames": 22169,
+      "n_windows": 74
+    },
+    "case_5316": {
+      "fps": 60.0,
+      "n_frames": 20478,
+      "n_windows": 69
+    },
+    "case_5317": {
+      "fps": 60.0,
+      "n_frames": 18115,
+      "n_windows": 61
+    },
+    "case_5319": {
+      "fps": 60.0,
+      "n_frames": 33067,
+      "n_windows": 111
+    },
+    "case_5329": {
+      "fps": 59.94005994005994,
+      "n_frames": 22448,
+      "n_windows": 75
+    },
+    "case_5331": {
+      "fps": 60.0,
+      "n_frames": 22515,
+      "n_windows": 76
+    },
+    "case_5334": {
+      "fps": 59.94005994005994,
+      "n_frames": 23349,
+      "n_windows": 78
+    },
+    "case_5335": {
+      "fps": 60.0,
+      "n_frames": 22027,
+      "n_windows": 74
+    },
+    "case_5340": {
+      "fps": 59.94005994005994,
+      "n_frames": 21619,
+      "n_windows": 73
+    },
+    "case_5353": {
+      "fps": 60.0,
+      "n_frames": 19086,
+      "n_windows": 64
+    },
+    "case_5357": {
+      "fps": 60.0,
+      "n_frames": 25963,
+      "n_windows": 87
+    }
+  },
+  "checks_passed": [
+    1,
+    2,
+    3
+  ]
+}

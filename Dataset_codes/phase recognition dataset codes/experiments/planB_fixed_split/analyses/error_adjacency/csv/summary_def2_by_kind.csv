@@ -1,0 +1,7 @@
+model,kind,時間的に隣接,時間的に非隣接
+baseline_91.4,手術フェーズどうし,116,105
+baseline_91.4,正解idle→予測別フェーズ,44,21
+baseline_91.4,正解別フェーズ→予測idle,93,0
+defectfree,手術フェーズどうし,155,93
+defectfree,正解idle→予測別フェーズ,244,38
+defectfree,正解別フェーズ→予測idle,225,0

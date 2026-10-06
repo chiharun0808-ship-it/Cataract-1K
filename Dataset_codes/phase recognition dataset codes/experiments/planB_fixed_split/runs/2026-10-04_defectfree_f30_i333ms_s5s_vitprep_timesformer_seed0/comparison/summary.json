@@ -1,0 +1,19 @@
+{
+  "baseline_91.4": {
+    "accuracy": 91.36,
+    "n_steps": 4387,
+    "macro_f1_video": 0.8666,
+    "pred_switches": 517,
+    "true_switches": 352
+  },
+  "defectfree": {
+    "accuracy": 82.79,
+    "n_steps": 4387,
+    "macro_f1_video": 0.7602,
+    "pred_switches": 327,
+    "true_switches": 352
+  },
+  "cases_improved": 0,
+  "cases_worse": 11,
+  "mean_case_diff": -9.0
+}

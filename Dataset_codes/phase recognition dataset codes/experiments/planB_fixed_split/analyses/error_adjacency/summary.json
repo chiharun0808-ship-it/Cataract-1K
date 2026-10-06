@@ -1,0 +1,26 @@
+{
+  "total_errors": {
+    "baseline_91.4": 379,
+    "defectfree": 755
+  },
+  "def1": {
+    "baseline_91.4": {
+      "idle絡み": 158,
+      "隣接": 99,
+      "非隣接": 122
+    },
+    "defectfree": {
+      "idle絡み": 507,
+      "隣接": 127,
+      "非隣接": 121
+    }
+  },
+  "share_within_10s_of_boundary_by_kind": {
+    "baseline_91.4|手術フェーズどうし": 0.819,
+    "baseline_91.4|正解idle→予測別フェーズ": 0.985,
+    "baseline_91.4|正解別フェーズ→予測idle": 0.957,
+    "defectfree|手術フェーズどうし": 0.948,
+    "defectfree|正解idle→予測別フェーズ": 1.0,
+    "defectfree|正解別フェーズ→予測idle": 1.0
+  }
+}
