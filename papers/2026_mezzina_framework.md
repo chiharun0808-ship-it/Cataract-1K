@@ -1,6 +1,6 @@
 # A Framework for Real-Time Surgical Phase Recognition …（Mezzina ら, WACV 2026）
 
-- 引用キー：mezzina2026realtime
+- 引用キー：2026_mezzina_framework
 - 著者：未確認
 - 発表：WACV 2026（開催月は未確認）
 - リンク：https://openaccess.thecvf.com/content/WACV2026/papers/Mezzina_A_Framework_for_Real-Time_Surgical_Phase_Recognition_with_Application_to_WACV_2026_paper.pdf

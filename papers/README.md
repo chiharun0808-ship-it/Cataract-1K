@@ -3,10 +3,13 @@
 ## ルール
 
 - **フォルダは分けない。** 分類はすべて `index.md` の表のタグで行う。
-- **ファイル名 = 引用キー**：`筆頭著者の姓(小文字) + 年4桁 + 題名の代表語1つ`
-  - 例：`liu2026stabilizing.pdf` / `liu2026stabilizing.md`（メモ）
-  - 同じキーがすでにあれば末尾に `b`, `c` を付ける（`liu2026stabilizingb`）。
-  - 著者が分からないうちは `tbd年_代表語` にしておき、分かったら付け直す。
+- **ファイル名 = 引用キー**：`発表年4桁_筆頭著者の姓(小文字)_題名の最初の意味のある英単語(小文字)`
+  - 例：`2026_liu_stabilizing.pdf` / `2026_liu_stabilizing.md`（メモ）／ 本文では `\cite{2026_liu_stabilizing}`
+  - 「A」「An」「The」「On」など意味の薄い語は飛ばす（A Framework for … → `framework`）。
+  - Google Scholar 等の BibTeX はキーが `liu2026stabilizing` 形式なので、貼るときにこの形式へ書き換える。
+  - 同じキーがすでにあれば末尾に `b`, `c` を付ける（`2026_liu_stabilizingb`）。
+  - 著者が分からないうちは `年_tbd_代表語` にしておき、分かったら付け直す。
+  - 数字で始まるキーに対応しないツールに当たったら、先頭に `y` を付ける（`y2026_liu_stabilizing`）。
 - **PDF はgitに入れない**（`.gitignore` で `papers/**/*.pdf` を除外）。gitで管理するのは `index.md`・`refs.bib`・メモ（`.md`）だけ。
 - **メモ**：PDF と同じ名前の `.md`。ひな形は `_template.md`。
 - **発表月**は `index.md` の「発表」列に `YYYY-MM` で書く。どの日付を使うかは次のとおり。
@@ -30,7 +33,7 @@
 ## 新しい論文を登録する手順
 
 1. PDF をダウンロードし、Claude に「この論文を登録して」と頼む（または自分で以下を行う）。
-2. 引用キーを決めて、PDF を `papers/キー.pdf` に置く。
+2. 引用キー（`年_著者_単語`）を決めて、PDF を `papers/キー.pdf` に置く。
 3. `index.md` の表に 1 行足す。
 4. `refs.bib` に BibTeX を足す（出版社や arXiv のページの「Cite」からコピー）。
 5. `_template.md` をコピーして `キー.md` を作り、読んだらメモを書く。
