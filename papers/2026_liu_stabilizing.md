@@ -1,6 +1,6 @@
 # Stabilizing Temporal Inference Dynamics for Online Surgical Phase Recognition（Liu ら, MICCAI 2026）
 
-- 引用キー：liu2026stabilizing
+- 引用キー：2026_liu_stabilizing
 - 著者：未確認
 - 発表：MICCAI 2026（開催月は未確認）／ arXiv 2026-05（2605.16387）
 - リンク：https://arxiv.org/html/2605.16387

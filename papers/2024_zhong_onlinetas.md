@@ -1,6 +1,6 @@
 # OnlineTAS（Zhong, Ding, Yao, NeurIPS 2024）
 
-- 引用キー：zhong2024onlinetas
+- 引用キー：2024_zhong_onlinetas
 - 著者：工学系（コンピュータビジョン）
 - 発表：NeurIPS 2024 ／ arXiv 2024-11（2411.01122）
 - リンク：https://arxiv.org/html/2411.01122
