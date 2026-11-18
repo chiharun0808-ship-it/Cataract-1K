@@ -12,3 +12,6 @@ Dataset_codes/phase recognition dataset codes/sliding_window_dataset_stride5/
 .DS_Store
 Dataset_codes/phase recognition dataset codes/attention_analysis/*/raw/
 Dataset_codes/phase recognition dataset codes/attention_analysis/*/plots/
+
+# 論文PDF（著作権のためgitに入れない。index.md・refs.bib・メモだけ管理）
+papers/**/*.pdf
