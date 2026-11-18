@@ -1,7 +1,7 @@
 # TTDF（Guo, Valdastri, Sarikaya, 2026）
 
 - 引用キー：2026_guo_ttdf（仮。正式な題名が分かったら最初の意味のある単語で付け直す）
-- 著者：工学系（ロボット・手術支援の工学グループ）
+- 著者：工学系（推測：共著者 Valdastri の所属が工学系のため。PDF で確認する）
 - 発表：2026-09（arXiv 2609.14624）
 - リンク：https://arxiv.org/html/2609.14624
 - 状態：未取得（PDFなし）。11-17 の読書メモ（planB-baseline-reproduce worktree の notes/2026-11-17_flicker_delay_papers.md）から移したもの。arXiv の HTML で本文を確認した範囲。
