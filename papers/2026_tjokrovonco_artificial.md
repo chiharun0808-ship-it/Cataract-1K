@@ -5,6 +5,7 @@
 - 発表：2026-10（BMC Ophthalmology 26:696、2026-10-27 公開。受理 2026-10-22）
 - リンク：https://doi.org/10.1186/s12886-026-05483-4 ／ PMC：https://pmc.ncbi.nlm.nih.gov/articles/PMC13718037
 - 状態：流し読み（2026-11-20、PMC と PDF 本文を Claude が確認。数字は PDF で照合済み）
+- 本人：読んだ（2026-11-20、和訳で）
 - 全文の和訳：`2026_tjokrovonco_artificial_ja.pdf`（2026-11-20、手元のみ。GitHub には置いていない）
 
 ## 一言で
