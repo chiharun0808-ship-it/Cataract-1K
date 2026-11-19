@@ -4,7 +4,7 @@
 - 著者：**医者**（6人全員が医学系。筆頭・責任著者 Tjokrovonco は Universitas Padjadjaran 医学部眼科 ／ Cicendo Hospital National Eye Center、インドネシア）
 - 発表：2026-10（BMC Ophthalmology 26:696、2026-10-27 公開。受理 2026-10-22）
 - リンク：https://doi.org/10.1186/s12886-026-05483-4 ／ PMC：https://pmc.ncbi.nlm.nih.gov/articles/PMC13718037
-- 状態：流し読み（2026-11-20、PMC の本文を Claude が確認。「Intelligent Surgery」の結果の部分は要約でしか読めていない → 下の「要確認」）
+- 状態：流し読み（2026-11-20、PMC と PDF 本文を Claude が確認。数字は PDF で照合済み）
 
 ## 一言で
 白内障の診療の流れ全体（見つける→評価→手術計画→手術中→回復）の AI 研究 185 本を整理した、眼科医によるレビュー。ほとんどが内部での検証どまりで、複数施設での前向き評価はごくわずか。
@@ -31,6 +31,25 @@
 - "Such models should define clinically actionable outcomes, undergo independent external validation"
 - 優先事項："... reproducibility across equipment and populations, ... and evaluation of whether AI changes clinical decisions or outcomes."
 
-## 要確認（PDF で自分で読む）
-- Intelligent Surgery の結果（要約でしか読めていない）：28 本のうち、最高段階は内部 19・外部 6・前向き単施設 1、多施設なし。工程認識の正解率 82.64〜98.79%（6 件）、F1 77.67〜98.79%（3 件）。リアルタイムで使った研究はなく、「リアルタイムの多施設評価」が今後の課題、とあるらしい。→ 引用する前に本文で数字を確かめる。
-- 予測の揺れ（安定性）やラベルの質について直接書いた文は見つかっていない。
+## 手術中の AI（Intelligent Surgery）の詳細 — PDF で確認済み（Table 1・Table 2・本文 p.8 付近）
+- 28 本：工程（phase / step）認識、器具の検出・追跡、解剖の領域分割、術中ガイド、技能評価、手術時間の予測など（文献 144〜170）。
+- 検証が当てはまる 27 本のうち（Table 1 Panel A、重複あり）：内部 24（88.9%）、時間的 0、外部 7（25.9%）、前向き 1（3.7%）、前向き多施設 0。
+- 到達した最高段階（Panel B）：なし・不明 1、**内部 19（70.4%）**、外部 6（22.2%）、前向き単施設 1（3.7%）、**多施設 0**。
+- **工程認識が一番多いタスク**。正解率 82.64〜98.79%（6 本）、F1 77.67〜98.79%（3 本）、precision 82.20〜94.90%（2 本）、recall 77.32〜95.20%（2 本）、AUC 0.950〜0.990（2 本）。プールした値ではなく、報告値の幅。
+- その他：瞳孔の領域分割 Dice 96.82%（1 本）、技能評価 AUC 0.780〜0.880（3 本）、器具の識別 AUC 0.970〜0.999（2 本）。
+- 著者の評価：ほとんどが過去の手術動画と内部評価に頼っている。日常の臨床で使う前に、**固定したモデルを、別の術者・施設・顕微鏡・症例の難しさで前向きに試す必要がある**。
+- 今後の課題（Table 2）："Real-time multicenter evaluation across surgeons, equipment, workflows, and case complexity"
+
+### 含まれている白内障の工程認識・手術動画の論文（読む候補）
+- 167 Yeh ら「PhacoTrainer: A Multicenter Study of Deep Learning for Activity Recognition in Cataract Surgical Videos」（TVST）← **多施設**
+- 168 Morita, Tabuchi ら「Real-Time Surgical Problem Detection and Instrument Tracking in Cataract Surgery」（J Clin Med 2020）← **リアルタイム、日本の眼科**
+- 169 Wang, Nakashima ら「Real-time estimation of the remaining surgery duration for cataract surgery …」← **リアルタイム、工程時間**
+- 160 Fang ら「Global–local multistage TCN for cataract surgery phase recognition」（Biomed Eng Online 2022）
+- 153 Mahmoud ら「CatStep: … Phase Classification and Boundary Segmentation …」
+- 151 Nasirihaghighi, Ghamsarian ら「Dual invariance self-training for reliable semi-supervised surgical phase recognition」（IEEE ISBI 2025、Cataract-1K の著者）
+- 161 Touma ら「code-free machine learning model for the classification of cataract surgery phases」（Sci Rep 2022、眼科医）
+
+## 確認しておいたこと
+- 「手術の難しさは、1 つの合併症が起こる確率と同じではない」という文は本文にある（原文："surgical complexity is not synonymous with the probability of a single complication"）。
+- 予測の揺れ（安定性）や正解ラベルの質について直接書いた文は、PDF 本文にもない。
+- 外部検証で見るべき分布のずれ：施設、患者集団、機器、術者、ワークフロー。前向き研究では性能だけでなく、較正、失敗のしかた、使いやすさ、臨床判断への影響も評価すべき、とある。「手術中の判断に影響するシステムでは特に多施設評価が重要」。
