@@ -9,3 +9,4 @@
 | [2026_guo_ttdf](2026_guo_ttdf.md) | TTDF | 2026-09（arXiv） | arXiv | 工学系 | 揺れ, 遅れ | 手法 | Q3 | 未取得 | 遅れを数字で出している唯一の論文。余計な切り替わりを減らすと遅れの中央値が 0 → 6.3 |
 | [2026_liu_stabilizing](2026_liu_stabilizing.md) | Stabilizing Temporal Inference Dynamics for Online Surgical Phase Recognition | 2026-??（MICCAI）／arXiv 2026-05 | MICCAI 2026 | 未確認 | 揺れ, 評価指標 | 手法, 評価 | Q3 | 未取得 | TFI の出典。証拠を累積して閾値を超えたら切り替える。遅れは測っていない |
 | [2026_mezzina_framework](2026_mezzina_framework.md) | A Framework for Real-Time Surgical Phase Recognition … | 2026-??（WACV） | WACV 2026 | 未確認 | 遅れ, 揺れ | 手法 | Q3 | 未取得 | 前向きだけの Viterbi で正確さと遅れを釣り合わせるらしい（本文未読） |
+| [2026_tjokrovonco_artificial](2026_tjokrovonco_artificial.md) | AI across the cataract care continuum（CAICC スコーピングレビュー） | 2026-10 | BMC Ophthalmology | 医者 | 汎化, 臨床用途, 評価指標 | 背景 | Q2, Q4 | 流し読み | 白内障 AI 185 本のうち 68% が内部検証どまり、多施設の前向き評価は 1%。IEEE は未検索 |
