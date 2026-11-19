@@ -15,6 +15,8 @@
 
 | キー | 題名（短く） | 発表 | 会議・雑誌 | 著者の立場 | テーマ | なぜ読む・何に使う | 状態 |
 |---|---|---|---|---|---|---|---|
+| [2020_morita_realtime](2020_morita_realtime.md) | Real-Time Surgical Problem Detection and Instrument Tracking in Cataract Surgery | 2020 | J Clin Med | 医者（推測） | 臨床（医者の視点）, 遅れ | 日本の眼科医によるリアルタイムの問題検出。医者がリアルタイムで何を知りたいか（警告・危険度）の材料 | 未読（PDF なし） |
+| [2021_yeh_phacotrainer](2021_yeh_phacotrainer.md) | PhacoTrainer: A Multicenter Study of Deep Learning for Activity Recognition in Cataract Surgical Videos | 2021 | Transl Vis Sci Technol | 混合（推測） | 汎化, ラベル・データセット | 複数施設での工程認識の先行研究。施設の違いで性能がどう変わるかを確認する | 未読（PDF なし） |
 | [2024_ghamsarian_cataract1k](2024_ghamsarian_cataract1k.md) | Cataract-1K Dataset for Deep-Learning-Assisted Analysis of Cataract Surgery Videos | 2024-04 | Scientific Data | 混合 | ラベル・データセット | 使っているデータの元論文。13 工程・56 本のラベルの定義と付け方を確認する | 未読（PDF なし） |
 | [2024_zhong_onlinetas](2024_zhong_onlinetas.md) | OnlineTAS | 2024-12（NeurIPS）／arXiv 2024-11 | NeurIPS 2024 | 工学系 | 揺れ, 手法一般 | 自信度と継続時間による後処理で揺れを抑える方法。遅れは測っていない（比較相手） | 未取得 |
 | [2025_shah_stepal](2025_shah_stepal.md) | StepAL: Step-aware Active Learning for Cataract Surgical Videos | 2025-??（MICCAI）／arXiv 2025-07 | MICCAI 2025 | 混合（推測） | ラベル・データセット, 手法一般 | Cataract-1K を手順として扱った先行研究。ラベル付けの負担を減らす方法（2026_ali_labels と同じグループ） | 未読（PDF なし） |
