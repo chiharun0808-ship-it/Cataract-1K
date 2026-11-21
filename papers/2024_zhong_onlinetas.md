@@ -1,10 +1,11 @@
 # OnlineTAS（Zhong, Ding, Yao, NeurIPS 2024）
 
 - 引用キー：2024_zhong_onlinetas
-- 著者：工学系（コンピュータビジョン）
+- 著者：工学系（University of Adelaide、National University of Singapore。PDF で確認）
 - 発表：NeurIPS 2024 ／ arXiv 2024-11（2411.01122）
 - リンク：https://arxiv.org/html/2411.01122
-- 状態：未取得（PDFなし）。11-17 の読書メモ（planB-baseline-reproduce worktree の notes/2026-11-17_flicker_delay_papers.md）から移したもの。arXiv の HTML で本文を確認した範囲。
+- ライセンス：arXiv 標準（nonexclusive-distrib 1.0）→ 全文和訳は不可、作るなら日本語の要約
+- 状態：未読（PDF 取得 2026-11-21、本文 16 ページ）。11-17 の読書メモ（planB-baseline-reproduce worktree の notes/2026-11-17_flicker_delay_papers.md）から移したもの。arXiv の HTML で本文を確認した範囲。
 
 ## 一言で
 自信と継続時間による後処理で edit が大きく上がるが、正解率は少し下がる。手術ではなく料理動画など。

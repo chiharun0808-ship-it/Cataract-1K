@@ -4,7 +4,8 @@
 - 著者：Lincoln Spencer、Song Wang、Chen Chen（University of Central Florida, Institute of Artificial Intelligence）。工学系（医者の共著者はなし）
 - 発表：arXiv 2026-04（2604.10514、v1）。会議・雑誌は書かれていない
 - リンク：https://arxiv.org/abs/2604.10514 ／ https://arxiv.org/html/2604.10514 ／ https://sl2005.github.io/DataEfficient-sics-phase-seg/
-- 状態：未取得（PDF なし）。2026-11-20 に arXiv の HTML（v1）を確認した範囲のメモ（取得は要約を経由したので、数字は PDF で確かめる）。
+- ライセンス：CC BY 4.0（arXiv）→ 全文和訳できる
+- 状態：未読（PDF 取得 2026-11-21、7 ページ）。2026-11-20 に arXiv の HTML（v1）を確認した範囲のメモ（取得は要約を経由したので、数字は PDF で確かめる）。
 
 ## 一言で
 小切開白内障手術（SICS-155）で、凍結した画像・動画の基盤モデルの特徴を同じ MS-TCN++ に入れて比べた。DINOv3 ViT-7B が最良、ViT-L もほぼ同じ。
