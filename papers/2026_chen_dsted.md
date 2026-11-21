@@ -1,10 +1,11 @@
 # DSTED: Decoupling Temporal Stabilization and Discriminative Enhancement for Surgical Workflow Recognition
 
 - 引用キー：2026_chen_dsted
-- 著者：Yueyao Chen、Qi Dou ほか。工学系（推測：Qi Dou は CUHK の工学系の研究者として知られる。発表先も IPCAI。PDF で所属を確認する）
+- 著者：Yueyao Chen、Kai-Ni Wang、Dario Tayupo、Arnaud Huaulmé、Krystel Nyangoh Timoh、Pierre Jannin、Qi Dou。**混合（推測）**：筆頭と責任著者は CUHK の Computer Science and Engineering（工学系）、他は Univ Rennes・Inserm LTSI。Nyangoh Timoh のメールが CHU Rennes（大学病院）なので医者の可能性（PDF の所属欄は LTSI だけ）
 - 発表：2026-??（IPCAI 2026、早期採択）／ arXiv：2025-12（2512.19387）
 - リンク：https://arxiv.org/abs/2512.19387 ／ https://arxiv.org/html/2512.19387v1
-- 状態：未取得（PDF なし）。2026-11-20 に arXiv の HTML（v1）を確認した範囲のメモ。
+- ライセンス：CC BY 4.0（arXiv）→ 全文和訳できる
+- 状態：未読（PDF 取得 2026-11-21、13 ページ）。以下は 2026-11-20 に arXiv の HTML（v1）を確認した範囲のメモ。
 
 ## 一言で
 短い窓の予測の確信度が低いときほど、過去の記憶（約 1 分）と、学習データの「難しい例」の特徴を強く足すゲート。
@@ -24,4 +25,4 @@
 - 違うところ：長い文脈が同じモデルの特徴（自分たちは別の見方の特徴）。ゲートは 1 位の確率だけ（自分たちは 1 位と 2 位の差と、取り違えやすい組か）。揺れを数字で出していない。腹腔鏡だけ。
 
 ## 疑問点・あとで確認すること
-- a が負になりうるか、ゲートがクラスごとか。著者全員の名前と所属。
+- a が負になりうるか、ゲートがクラスごとか。著者のうち医者は誰か（Nyangoh Timoh の所属）。
