@@ -7,6 +7,8 @@
 - リンク：https://mhlw-grants.niph.go.jp/system/files/download_pdf/2021/202103007A.pdf （無料公開）
 - 状態：未読（2026-11-22 登録）。手術動画の分担報告（p.29–33）は登録時に読んだ
 
+- 論文になったもの：危険度 → [[2022_tabuchi_realtime]]（Taiwan J Ophthalmol 2022）、手術時間の推定 → [[2023_wang_realtime]]（BMC Med Inform Decis Mak 2023）。前身は [[2019_morita_realtime]]
+
 ## 一言で
 3 年のうち最も詳しい年。手術動画の収集サイトの運用開始、手術時間のリアルタイム推定、前嚢切開の器具の動きによる技能の数値化、取り違え防止 AI の実運用の成績。
 
