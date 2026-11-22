@@ -1,10 +1,11 @@
 # StepAL: Step-aware Active Learning for Cataract Surgical Videos
 
 - 引用キー：2025_shah_stepal
-- 著者：Nisarg A. Shah, Bardia Safaei, Shameema Sikder, S. Swaroop Vedula, Vishal M. Patel。立場は**混合（推測）**：Sikder は眼科医として知られる（Johns Hopkins）が、arXiv のページには所属がない → PDF で確認する
+- 著者：**混合**。Nisarg A. Shah・Bardia Safaei（筆頭 2 名は同等の貢献）・Vishal M. Patel は JHU（工学系）、Shameema Sikder は Wilmer Eye Institute（JHU 医学部の眼科）、S. Swaroop Vedula は JHU Malone Center（医療工学）。GLSFormer（2023_shah_glsformer）・2026_ali_labels と同じグループ。
 - 発表：MICCAI 2025（開催月は未確認）／ arXiv 2025-07（2507.22059）
 - リンク：https://arxiv.org/abs/2507.22059 ／ https://papers.miccai.org/miccai-2025/paper/3578_paper.pdf
-- 状態：未読（PDF 未取得）
+- ライセンス：CC BY-NC-SA 4.0（arXiv）→ 全文和訳を作成（2025_shah_stepal_ja.pdf、本文のみ。謝辞・参考文献は訳さず）
+- 状態：未読（和訳あり）
 
 ## 一言で
 白内障手術動画の手順（step）認識のための能動学習。フレームやクリップではなく動画 1 本ごとにラベル付けの対象を選ぶ。Cataract-1K と Cataract-101 で実験。
@@ -12,3 +13,16 @@
 ## 読むときに確かめたいこと
 - Cataract-1K を「step」として扱っているか、phase とどう対応させているか。
 - ラベル付けのコストの見積もり（医師の負担の話に使えるか）。
+
+## 和訳を作るときに気づいたこと（2026-11-22）
+- **step = Cataract-1K の 13 クラスそのもの**。phase との対応づけや読み替えはしていない（56 本、13 手順と書いている）。
+- **分割は独自**：Cataract-1K を学習 25・検証 7・テスト 24 本。公式の分割ではない。1 fps に間引き、ViViT-B/16（Kinetics-400 事前学習）で 16 フレームのクリップを分類。
+- **全データで学習した上限（オラクル）**：Cataract-1K で正解率 92.01%。学習 25 本でこの値。
+- **ラベル付けのコストは「動画の本数（学習動画の %）」でしか測っていない**。アノテーションにかかる時間や医師の手間の見積もりはない。「アノテーションする人は動画全体の文脈を必要とする」というのが動画単位で選ぶ理由だが、これも医師に聞いた根拠は示されていない。
+- **評価はフレームごとの正解率・適合率・再現率・Jaccard だけ**。edit スコアなど区間の指標はなく、揺れは評価していない。
+- 主な結果（表 1）は R = 1（初めの 10% に 10% を足した、学習動画の 20% ≒ 5 本と思われる）の値。Cataract-1K で正解率 0.7169（次に良い Entropy 0.6703）。
+- **原文の不整合**（和訳に訳注）：
+  - 2.1 前の本文は「確率を平均してからエントロピー」、式 (5) は「クリップごとのエントロピーの平均」で食い違う。
+  - 表 1 の Cataract-1K で Margin と Coreset の 4 つの値がすべて同じで、表 2 の KMeans とも同じ。
+  - 表 1 の（+%）は差（ポイント）、アブレーションの本文の 15.7%・7.3%・5.3% は比（相対）。
+- 自分の研究との関係：手法としては直接は使わないが、「医師のラベル付けは動画単位で文脈が要る」という主張は、正解ラベルの付け方（境界の大まかさ）の話の参考になる。
