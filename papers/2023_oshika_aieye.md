@@ -7,6 +7,8 @@
 - リンク：https://mhlw-grants.niph.go.jp/system/files/download_pdf/2022/202203006A.pdf （無料公開）
 - 状態：未読（2026-11-22 登録）
 
+- 論文になったもの：危険度 → [[2022_tabuchi_realtime]]（Taiwan J Ophthalmol 2022）、手術時間の推定 → [[2023_wang_realtime]]（BMC Med Inform Decis Mak 2023）。前身は [[2019_morita_realtime]]
+
 ## 一言で
 最終年度のまとめ。AI を他施設へ広げるときの障害（ロードブロック）の整理と、手術の危険度をリアルタイムに出す指標の研修医とスタッフ医師の比較。
 
