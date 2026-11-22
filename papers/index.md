@@ -28,6 +28,7 @@
 | [2024_ghamsarian_cataract1k](2024_ghamsarian_cataract1k.md) | Cataract-1K Dataset for Deep-Learning-Assisted Analysis of Cataract Surgery Videos | 2024-04 | Scientific Data | 混合 | ラベル・データセット | 使っているデータの元論文。13 工程・56 本のラベルの定義と付け方を確認する | 未読（和訳あり） |
 | [2024_oquab_dinov2](2024_oquab_dinov2.md) | DINOv2: Learning Robust Visual Features without Supervision | 2024-01（TMLR）／arXiv 2023-04 | TMLR | 工学系 | 手法一般 | 長い窓の枝の特徴抽出器の出典。凍結のまま線形層だけで CLIP 系と互角、微調整の伸びは小さい | 未読（日本語要約あり） |
 | [2024_zhong_onlinetas](2024_zhong_onlinetas.md) | OnlineTAS | 2024-12（NeurIPS）／arXiv 2024-11 | NeurIPS 2024 | 工学系 | 揺れ, 手法一般 | 自信度と継続時間による後処理で揺れを抑える方法。遅れは測っていない（比較相手） | 未読（日本語要約あり） |
+| [2025_sachdeva_utility](2025_sachdeva_utility.md) | Utility of an LLM-powered experts-in-the-loop chatbot for cataract surgery patients（CataractBot） | 2025-12 | Eur J Ophthalmol | 混合 | 臨床（医者の視点） | 白内障の術前後の患者の質問に答える LLM チャットボットを、医師が後から確認する運用。工程認識とは別の、白内障診療の AI の背景 | 未取得（PDF なし） |
 | [2025_shah_stepal](2025_shah_stepal.md) | StepAL: Step-aware Active Learning for Cataract Surgical Videos | 2025-??（MICCAI）／arXiv 2025-07 | MICCAI 2025 | 混合 | ラベル・データセット, 手法一般 | Cataract-1K を手順として扱った先行研究。ラベル付けの負担を減らす方法（2026_ali_labels と同じグループ） | 未読（和訳あり） |
 | [2025_simeoni_dinov3](2025_simeoni_dinov3.md) | DINOv3 | 2025-08（arXiv） | arXiv | 工学系 | 手法一般 | DINOv2 から替える候補。Gram anchoring で密な特徴が安定、動画の追跡も良い（時間方向に安定した特徴） | 未読（日本語要約あり） |
 | [2025_tbd_depthor](2025_tbd_depthor.md) | 深度カメラの手術室動画のフェーズ認識 | 2025-?? | Surgical Endoscopy | 未確認 | 揺れ, 遅れ | 医学誌の立場から「予測を遅らせて平滑化すると頑健」と言っているらしい。揺れと遅れの関係の手がかり | 未取得（ログインが必要） |
@@ -36,4 +37,5 @@
 | [2026_guo_ttdf](2026_guo_ttdf.md) | TTDF | 2026-09（arXiv） | arXiv | 工学系 | 揺れ, 遅れ | 遅れを数字で出した唯一の論文（余計な切り替わりを減らすと遅れの中央値 0 → 6.3）。揺れと遅れのトレードオフの比較相手 | 未取得 |
 | [2026_liu_stabilizing](2026_liu_stabilizing.md) | Stabilizing Temporal Inference Dynamics for Online Surgical Phase Recognition | 2026-??（MICCAI）／arXiv 2026-05 | MICCAI 2026 | 未確認 | 揺れ, 評価方法 | 揺れの指標 TFI の出典。証拠を累積して切り替える方法。遅れは測っていない | 未取得 |
 | [2026_mezzina_framework](2026_mezzina_framework.md) | A Framework for Real-Time Surgical Phase Recognition … | 2026-??（WACV） | WACV 2026 | 未確認 | 揺れ, 遅れ | 前向きだけの Viterbi で正確さと遅れを釣り合わせるらしい。遅れを扱う数少ない論文 | 未取得（403） |
+| [2026_vijayasimha_comment](2026_vijayasimha_comment.md) | Comment on: Evaluating LLMs vs residents in cataract and refractive surgery | 2026-06 | J Cataract Refract Surg（コメント） | 未確認 | 臨床（医者の視点）, 評価方法 | 試験の正解率が高くても臨床で信頼できるとは限らないとして、LLM の検証の枠組みを提案。「正解率だけでは臨床の要件を測れない」という背景の補強 | 未取得（PDF なし） |
 | [tbd_surgcbvr](tbd_surgcbvr.md) | SurgCBVR-CAT（クリップ検索ベンチマーク） | 未出版 | （Data in Brief 予定） | 未確認 | ラベル・データセット | Cataract-1K の工程ラベルを使った派生資源。論文が出たら登録し直す | 論文がまだない |
